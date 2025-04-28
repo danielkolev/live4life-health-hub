@@ -18,7 +18,7 @@ const Hero = () => {
                 <Calendar className="mr-2 h-5 w-5" />
                 Запазете час
               </Button>
-              <Button size="lg" variant="outline" className="border-white hover:bg-white transition-all duration-300 text-secondary-DEFAULT">
+              <Button size="lg" variant="outline" className="border-white transition-all duration-300 text-secondary-DEFAULT bg-secondary-light">
                 <Heart className="mr-2 h-5 w-5" />
                 Научете повече
               </Button>
