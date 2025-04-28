@@ -13,7 +13,7 @@ const ContactCTA = () => {
             <Phone className="mr-2 h-5 w-5" />
             <a href="tel:+359890209898">+359 89 020 9898</a>
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary transition-colors">
+          <Button size="lg" variant="outline" className="border-white text-white hover:text-primary transition-colors bg-secondary-foreground">
             <Mail className="mr-2 h-5 w-5" />
             <a href="mailto:lifeforlife@abv.bg">lifeforlife@abv.bg</a>
           </Button>
