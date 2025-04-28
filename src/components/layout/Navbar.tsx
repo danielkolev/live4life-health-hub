@@ -53,19 +53,32 @@ const Navbar = () => {
             <Link
               key={item.path}
               to={item.path}
-              className="text-secondary hover:text-primary font-medium transition-colors"
+              className={`font-medium transition-colors duration-300 ${
+                isScrolled 
+                  ? "text-secondary hover:text-primary" 
+                  : "text-white hover:text-primary"
+              }`}
             >
               {item.name}
             </Link>
           ))}
-          <Button variant="default" className="bg-primary hover:bg-primary-dark">
+          <Button 
+            variant="default" 
+            className={`${
+              isScrolled 
+                ? "bg-primary hover:bg-primary-dark" 
+                : "bg-white/20 hover:bg-primary text-white backdrop-blur-sm"
+            } transition-all duration-300`}
+          >
             <Calendar className="mr-2 h-4 w-4" /> Запазете час
           </Button>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-secondary hover:text-primary"
+          className={`lg:hidden transition-colors duration-300 ${
+            isScrolled ? "text-secondary" : "text-white"
+          } hover:text-primary`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
