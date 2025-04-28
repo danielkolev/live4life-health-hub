@@ -9,7 +9,7 @@ const ContactCTA = () => {
           Имате въпроси или искате да запазите час? Свържете се с нашия екип.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          <Button size="lg" variant="outline" className="border-white text-white hover:text-primary transition-colors bg-secondary-DEFAULT">
+          <Button size="lg" variant="outline" className="border-white text-white hover:text-primary transition-colors bg-secondary-foreground">
             <Phone className="mr-2 h-5 w-5" />
             <a href="tel:+359890209898">+359 89 020 9898</a>
           </Button>
