@@ -12,16 +12,28 @@ const ContactCTA = () => {
           Имате въпроси или искате да запазите час? Свържете се с нашия екип.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="border-white text-white hover:bg-white hover:text-primary transition-colors"
+          >
             <Phone className="mr-2 h-5 w-5" />
             <a href="tel:+359890209898">+359 89 020 9898</a>
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="border-white text-white hover:bg-white hover:text-primary transition-colors"
+          >
             <Mail className="mr-2 h-5 w-5" />
             <a href="mailto:lifeforlife@abv.bg">lifeforlife@abv.bg</a>
           </Button>
         </div>
-        <Button size="lg" asChild className="bg-white text-primary hover:bg-gray-100">
+        <Button 
+          size="lg" 
+          asChild 
+          className="bg-white text-primary hover:bg-gray-100 hover:text-primary-dark transition-colors"
+        >
           <Link to="/contact">Свържете се с нас</Link>
         </Button>
       </div>

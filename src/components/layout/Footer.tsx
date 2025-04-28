@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Heart, Mail, Phone } from "lucide-react";
 
@@ -7,11 +6,10 @@ const Footer = () => {
     <footer className="bg-secondary text-white pt-12 pb-6">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo and Description */}
           <div className="col-span-1 lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
               <img
-                src="/lovable-uploads/35225f20-87a8-4ff5-bdd0-d2c9daa46aa8.png"
+                src="/lovable-uploads/9dcd0c65-d1b0-4b55-9ab0-4a786995dfd0.png"
                 alt="Live4Life Medical Center"
                 className="h-16"
               />
@@ -20,8 +18,6 @@ const Footer = () => {
               Медицински Център, профилиран в организиране и провеждане на профилактични прегледи за индивидуални и корпоративни клиенти.
             </p>
           </div>
-
-          {/* Contact Info */}
           <div className="col-span-1 lg:col-span-1">
             <h3 className="text-lg font-semibold mb-4 text-primary">Контакти</h3>
             <div className="space-y-3">
@@ -39,8 +35,6 @@ const Footer = () => {
               </p>
             </div>
           </div>
-
-          {/* Quick Links */}
           <div className="col-span-1 lg:col-span-1">
             <h3 className="text-lg font-semibold mb-4 text-primary">Бързи връзки</h3>
             <ul className="space-y-2">
@@ -66,8 +60,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-          {/* Working Hours */}
           <div className="col-span-1 lg:col-span-1">
             <h3 className="text-lg font-semibold mb-4 text-primary">Работно време</h3>
             <ul className="space-y-2">
@@ -86,7 +78,6 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
         <div className="border-t border-gray-700 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
