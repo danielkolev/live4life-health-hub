@@ -160,3 +160,8 @@ html {
 .soft-border {
   @apply border border-gray-100;
 }
+
+/* Specialists image focus */
+.object-top {
+  object-position: center top;
+}
