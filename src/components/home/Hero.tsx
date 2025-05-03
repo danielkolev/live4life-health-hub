@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-gray-200 to-secondary text-white min-h-[85vh] flex items-center pt-16">
+    <section className="relative bg-gradient-to-br from-secondary to-gray-200 text-white min-h-[85vh] flex items-center pt-16">
       <div className="absolute inset-0 bg-pattern opacity-10"></div>
       
       <div className="container-custom relative z-10 py-16 md:py-24">
@@ -41,9 +41,9 @@ const Hero = () => {
           </div>
           
           <div className="flex justify-center lg:justify-end animate-fade-in">
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-full">
+            <a href="https://superdoc.bg" target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-sm p-8 rounded-full block">
               <img src="/lovable-uploads/fa20142c-c218-4352-9a85-856f2a5e3198.png" alt="Live4Life Medical Center Logo" className="max-w-[200px] md:max-w-sm" />
-            </div>
+            </a>
           </div>
         </div>
       </div>

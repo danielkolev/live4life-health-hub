@@ -78,19 +78,21 @@ const SpecialistsList = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="p-0">
-                <AspectRatio ratio={1/1} className="bg-gray-100">
-                  {specialist.image ? (
-                    <img 
-                      src={specialist.image} 
-                      alt={specialist.name} 
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                    />
-                  ) : (
-                    <div className="h-full w-full flex items-center justify-center bg-gray-100">
-                      <User className="h-16 w-16 text-gray-300" />
-                    </div>
-                  )}
-                </AspectRatio>
+                <a href={specialist.superdocLink} target="_blank" rel="noopener noreferrer">
+                  <AspectRatio ratio={1/1} className="bg-gray-100">
+                    {specialist.image ? (
+                      <img 
+                        src={specialist.image} 
+                        alt={specialist.name} 
+                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      />
+                    ) : (
+                      <div className="h-full w-full flex items-center justify-center bg-gray-100">
+                        <User className="h-16 w-16 text-gray-300" />
+                      </div>
+                    )}
+                  </AspectRatio>
+                </a>
                 <div className="p-5 bg-white">
                   <Badge className="bg-medical/10 text-medical hover:bg-medical/20 mb-2 font-normal self-start">{specialist.specialty}</Badge>
                   <h3 className="font-bold text-xl mb-4 text-secondary-dark line-clamp-2">{specialist.name}</h3>
