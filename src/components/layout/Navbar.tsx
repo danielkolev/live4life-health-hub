@@ -1,12 +1,13 @@
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Heart, Calendar, Phone, Menu, X } from "lucide-react";
+import { Calendar, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,10 +33,10 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? "bg-white shadow-md py-2"
-          : "bg-transparent py-4 lg:py-6"
+          : "bg-gradient-to-r from-secondary/80 to-secondary-dark/80 backdrop-blur-sm py-4 lg:py-6"
       }`}
     >
       <div className="container-custom flex justify-between items-center">
@@ -57,7 +58,7 @@ const Navbar = () => {
                 isScrolled 
                   ? "text-secondary hover:text-primary" 
                   : "text-white hover:text-primary"
-              }`}
+              } ${location.pathname === item.path ? "text-primary font-semibold" : ""}`}
             >
               {item.name}
             </Link>
@@ -66,9 +67,9 @@ const Navbar = () => {
             variant="default" 
             className={`${
               isScrolled 
-                ? "bg-primary hover:bg-primary-dark" 
-                : "bg-white/20 hover:bg-primary text-white backdrop-blur-sm"
-            } transition-all duration-300`}
+                ? "bg-primary text-white hover:bg-primary-dark" 
+                : "bg-white text-secondary hover:bg-primary hover:text-white"
+            } transition-all duration-300 shadow-md`}
           >
             <Calendar className="mr-2 h-4 w-4" />
             <a href="https://superdoc.bg" target="_blank" rel="noopener noreferrer">
@@ -94,13 +95,15 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-gradient-to-b from-secondary to-secondary-dark text-white shadow-lg py-4">
             <div className="container-custom flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="text-secondary hover:text-primary font-medium transition-colors py-2"
+                  className={`hover:text-primary font-medium transition-colors py-2 ${
+                    location.pathname === item.path ? "text-primary font-semibold" : "text-white"
+                  }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -108,7 +111,7 @@ const Navbar = () => {
               ))}
               <Button 
                 variant="default" 
-                className="bg-primary hover:bg-primary-dark w-full justify-center"
+                className="bg-white text-secondary hover:bg-primary hover:text-white w-full justify-center transition-all duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Calendar className="mr-2 h-4 w-4" />
