@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Heart } from "lucide-react";
 
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative bg-gradient-to-br from-medical-light to-medical text-white min-h-[85vh] flex items-center pt-16">
       <div className="absolute inset-0 bg-pattern opacity-10"></div>
@@ -21,7 +28,12 @@ const Hero = () => {
                 <Calendar className="mr-2 h-5 w-5" />
                 <a href="https://superdoc.bg" target="_blank" rel="noopener noreferrer">Запазете час в SuperDoc</a>
               </Button>
-              <Button size="lg" variant="outline" className="border-white bg-white/10 backdrop-blur-sm text-white transition-all duration-300 hover:bg-white hover:text-medical-dark">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white bg-white/10 backdrop-blur-sm text-white transition-all duration-300 hover:bg-white hover:text-medical-dark"
+                onClick={() => scrollToSection('about')}
+              >
                 <Heart className="mr-2 h-5 w-5" />
                 Научете повече
               </Button>

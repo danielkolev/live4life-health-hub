@@ -188,11 +188,6 @@ html {
   @apply bg-gradient-to-br from-primary-light to-primary;
 }
 
-/* Scroll behavior */
-.scroll-smooth {
-  @apply scroll-smooth;
-}
-
 /* Focus ring for accessibility */
 .focus-ring {
   @apply focus:outline-none focus:ring-2 focus:ring-medical focus:ring-offset-2;
