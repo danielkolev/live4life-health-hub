@@ -41,7 +41,7 @@ const Navbar = () => {
       <div className="container-custom flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img
-            src="/lovable-uploads/9dcd0c65-d1b0-4b55-9ab0-4a786995dfd0.png"
+            src="/lovable-uploads/2d8e2758-f909-4ca8-84de-9598b438c871.png"
             alt="Live4Life Medical Center"
             className="h-12 md:h-14"
           />
@@ -70,7 +70,10 @@ const Navbar = () => {
                 : "bg-white/20 hover:bg-primary text-white backdrop-blur-sm"
             } transition-all duration-300`}
           >
-            <Calendar className="mr-2 h-4 w-4" /> Запазете час
+            <Calendar className="mr-2 h-4 w-4" />
+            <a href="https://superdoc.bg" target="_blank" rel="noopener noreferrer">
+              Запазете час
+            </a>
           </Button>
         </nav>
 
@@ -108,7 +111,10 @@ const Navbar = () => {
                 className="bg-primary hover:bg-primary-dark w-full justify-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <Calendar className="mr-2 h-4 w-4" /> Запазете час
+                <Calendar className="mr-2 h-4 w-4" />
+                <a href="https://superdoc.bg" target="_blank" rel="noopener noreferrer">
+                  Запазете час
+                </a>
               </Button>
             </div>
           </div>

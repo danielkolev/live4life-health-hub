@@ -1,5 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { Calendar, Heart } from "lucide-react";
+
 const Hero = () => {
   return <section className="relative bg-gradient-to-br from-secondary to-secondary-dark text-white min-h-screen flex items-center pt-16">
       <div className="absolute inset-0 bg-black opacity-30"></div>
@@ -16,9 +18,9 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button size="lg" className="bg-primary hover:bg-primary-dark text-white transition-all duration-300">
                 <Calendar className="mr-2 h-5 w-5" />
-                Запазете час
+                <a href="https://superdoc.bg" target="_blank" rel="noopener noreferrer">Запазете час в SuperDoc</a>
               </Button>
-              <Button size="lg" variant="outline" className="border-white transition-all duration-300 text-secondary-DEFAULT bg-secondary-light">
+              <Button size="lg" variant="outline" className="border-white transition-all duration-300 hover:bg-white hover:text-secondary-dark">
                 <Heart className="mr-2 h-5 w-5" />
                 Научете повече
               </Button>
@@ -26,7 +28,7 @@ const Hero = () => {
           </div>
           
           <div className="flex justify-center lg:justify-end animate-fade-in">
-            <img src="/lovable-uploads/9dcd0c65-d1b0-4b55-9ab0-4a786995dfd0.png" alt="Live4Life Medical Center Logo" className="max-w-[200px] md:max-w-sm" />
+            <img src="/lovable-uploads/2d8e2758-f909-4ca8-84de-9598b438c871.png" alt="Live4Life Medical Center Logo" className="max-w-[200px] md:max-w-sm" />
           </div>
         </div>
       </div>
@@ -38,4 +40,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
