@@ -4,8 +4,16 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { User } from "lucide-react";
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselNext, 
+  CarouselPrevious 
+} from "@/components/ui/carousel";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-// Featured specialists (show only 3 on homepage)
+// Featured specialists (show only on homepage)
 const featuredSpecialists = [
   {
     id: 1,
@@ -24,7 +32,19 @@ const featuredSpecialists = [
     name: "Д-р Ива Великова",
     specialty: "Невролог",
     image: "https://superdoc.bg/photos/doctors/small/HhyOfilfrV5XGTV2feFFcWIyDMfCAPzJ9wk6ssWF.jpg",
-  }
+  },
+  {
+    id: 4,
+    name: "Д-р Юсуф Мусов",
+    specialty: "Ендокринолог",
+    image: "https://superdoc.bg/photos/doctors/small/Q1fn82wkix8zi1Dtj3cUY1HdS014wA3tAV4ErZuO.jpg",
+  },
+  {
+    id: 5,
+    name: "Д-р Тодор Калчев",
+    specialty: "Ортопед",
+    image: "https://superdoc.bg/photos/doctors/small/ZmMe5qAz3QNsgTiwDOH3Z8ZpVT25nuLimTeqwhDl.jpg",
+  },
 ];
 
 const SpecialistsSection = () => {
@@ -39,37 +59,46 @@ const SpecialistsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          {featuredSpecialists.map((specialist, index) => (
-            <Card 
-              key={specialist.id} 
-              className="overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100 bg-white/90 backdrop-blur-sm soft-shadow"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardContent className="p-0">
-                <div className="h-48 overflow-hidden relative">
-                  {specialist.image ? (
-                    <div className="relative h-full w-full">
-                      <div className="absolute inset-0 bg-gradient-to-t from-gray-100/40 to-transparent z-0"></div>
-                      <img 
-                        src={specialist.image} 
-                        alt={specialist.name} 
-                        className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
-                      />
-                    </div>
-                  ) : (
-                    <div className="h-full w-full flex items-center justify-center bg-gray-100">
-                      <User className="h-16 w-16 text-gray-300" />
-                    </div>
-                  )}
-                </div>
-                <div className="p-4 text-center">
-                  <h3 className="font-bold text-lg text-secondary-dark">{specialist.name}</h3>
-                  <p className="text-medical text-sm">{specialist.specialty}</p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="mb-10">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full px-4"
+          >
+            <CarouselContent>
+              {featuredSpecialists.map((specialist, index) => (
+                <CarouselItem key={specialist.id} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100 bg-white/90 soft-shadow h-full">
+                    <CardContent className="p-0">
+                      <AspectRatio ratio={1/1} className="bg-gray-100">
+                        {specialist.image ? (
+                          <img 
+                            src={specialist.image} 
+                            alt={specialist.name} 
+                            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                          />
+                        ) : (
+                          <div className="h-full w-full flex items-center justify-center bg-gray-100">
+                            <User className="h-16 w-16 text-gray-300" />
+                          </div>
+                        )}
+                      </AspectRatio>
+                      <div className="p-4 text-center">
+                        <h3 className="font-bold text-lg text-secondary-dark">{specialist.name}</h3>
+                        <p className="text-medical text-sm">{specialist.specialty}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex items-center justify-end mt-4 gap-2">
+              <CarouselPrevious className="static translate-y-0 left-auto" />
+              <CarouselNext className="static translate-y-0 right-auto" />
+            </div>
+          </Carousel>
         </div>
 
         <div className="mt-6 text-center">

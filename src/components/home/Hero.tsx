@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-medical-light to-medical text-white min-h-[85vh] flex items-center pt-16">
+    <section className="relative bg-gradient-to-br from-gray-200 to-secondary text-white min-h-[85vh] flex items-center pt-16">
       <div className="absolute inset-0 bg-pattern opacity-10"></div>
       
       <div className="container-custom relative z-10 py-16 md:py-24">
@@ -31,7 +31,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white bg-white/10 backdrop-blur-sm text-white transition-all duration-300 hover:bg-white hover:text-medical-dark"
+                className="border-white bg-white/10 backdrop-blur-sm text-white transition-all duration-300 hover:bg-white hover:text-secondary"
                 onClick={() => scrollToSection('about')}
               >
                 <Heart className="mr-2 h-5 w-5" />
