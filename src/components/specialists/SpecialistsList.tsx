@@ -69,7 +69,7 @@ const SpecialistsList = () => {
   return (
     <section className="section-padding bg-gradient-to-b from-white to-gray-50">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {specialists.map((specialist, index) => (
             <Card 
               key={specialist.id} 
@@ -80,7 +80,7 @@ const SpecialistsList = () => {
                 <div className="h-56 overflow-hidden relative">
                   {specialist.image ? (
                     <div className="relative h-full w-full">
-                      <div className="absolute inset-0 bg-gradient-to-t from-gray-200/40 to-transparent z-0"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-100/40 to-transparent z-0"></div>
                       <img 
                         src={specialist.image} 
                         alt={specialist.name} 
@@ -93,9 +93,9 @@ const SpecialistsList = () => {
                     </div>
                   )}
                 </div>
-                <div className="p-5 bg-gradient-to-b from-white to-gray-50 flex flex-col h-[160px]">
-                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20 mb-2 font-normal self-start">{specialist.specialty}</Badge>
-                  <h3 className="font-bold text-xl mb-auto text-secondary-dark">{specialist.name}</h3>
+                <div className="p-5 bg-white flex flex-col h-[170px]">
+                  <Badge className="bg-medical/10 text-medical hover:bg-medical/20 mb-2 font-normal self-start">{specialist.specialty}</Badge>
+                  <h3 className="font-bold text-xl mb-auto text-secondary-dark h-14 line-clamp-2">{specialist.name}</h3>
                   <Button 
                     variant="outline" 
                     className="w-full border-primary/80 text-primary hover:bg-primary hover:text-white transition-all group mt-2"

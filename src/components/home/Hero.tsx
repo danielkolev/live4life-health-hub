@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Heart } from "lucide-react";
 
 const Hero = () => {
-  return <section className="relative bg-gradient-to-br from-secondary to-secondary-dark text-white min-h-screen flex items-center pt-16">
-      <div className="absolute inset-0 bg-black opacity-30"></div>
+  return (
+    <section className="relative bg-gradient-to-br from-medical-light to-medical text-white min-h-[85vh] flex items-center pt-16">
+      <div className="absolute inset-0 bg-pattern opacity-10"></div>
       
       <div className="container-custom relative z-10 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -12,7 +13,7 @@ const Hero = () => {
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Медицински център <span className="text-primary">Live4Life</span>
             </h1>
-            <p className="text-lg md:text-xl mb-8 text-gray-100 max-w-xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl mb-8 text-white max-w-xl mx-auto lg:mx-0">
               Професионализмът на нашите специалисти, медицинското оборудване и персоналното отношение към всеки пациент са гаранция за високото качество на услугата.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -20,7 +21,7 @@ const Hero = () => {
                 <Calendar className="mr-2 h-5 w-5" />
                 <a href="https://superdoc.bg" target="_blank" rel="noopener noreferrer">Запазете час в SuperDoc</a>
               </Button>
-              <Button size="lg" variant="outline" className="border-white transition-all duration-300 hover:bg-white hover:text-secondary-dark">
+              <Button size="lg" variant="outline" className="border-white bg-white/10 backdrop-blur-sm text-white transition-all duration-300 hover:bg-white hover:text-medical-dark">
                 <Heart className="mr-2 h-5 w-5" />
                 Научете повече
               </Button>
@@ -28,7 +29,9 @@ const Hero = () => {
           </div>
           
           <div className="flex justify-center lg:justify-end animate-fade-in">
-            <img src="/lovable-uploads/2d8e2758-f909-4ca8-84de-9598b438c871.png" alt="Live4Life Medical Center Logo" className="max-w-[200px] md:max-w-sm" />
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-full">
+              <img src="/lovable-uploads/fa20142c-c218-4352-9a85-856f2a5e3198.png" alt="Live4Life Medical Center Logo" className="max-w-[200px] md:max-w-sm" />
+            </div>
           </div>
         </div>
       </div>
@@ -38,7 +41,8 @@ const Hero = () => {
           <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
         </svg>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default Hero;
