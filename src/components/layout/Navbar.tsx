@@ -43,7 +43,7 @@ const Navbar = () => {
       <div className="container-custom flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img
-            src="/lovable-uploads/fa20142c-c218-4352-9a85-856f2a5e3198.png"
+            src="/lovable-uploads/9c20fd2d-2c67-4b41-8aa6-fded19c67739.png"
             alt="Live4Life Medical Center"
             className="h-12 md:h-14"
           />
