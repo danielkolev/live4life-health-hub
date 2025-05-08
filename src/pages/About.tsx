@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -49,7 +50,7 @@ const About = () => {
               <Card className="overflow-hidden border-none shadow-lg">
                 <CardContent className="p-0">
                   <AspectRatio ratio={4 / 3}>
-                    <img alt="Чакалня на медицински център Live4Life" className="w-full h-full object-cover" src="/lovable-uploads/29f82d5b-afac-40bd-ab47-d98934c3d784.png" />
+                    <img alt="Чакалня на медицински център Live4Life" className="w-full h-full object-cover" src="/lovable-uploads/3382e796-4c40-4a9c-b014-7874fc2a9e29.png" />
                   </AspectRatio>
                 </CardContent>
               </Card>
