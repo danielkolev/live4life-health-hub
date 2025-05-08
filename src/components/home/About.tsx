@@ -2,6 +2,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const AboutSection = () => {
   return (
@@ -29,12 +30,14 @@ const AboutSection = () => {
           <div className="order-1 lg:order-2 flex justify-center">
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-primary rounded-lg transform -rotate-3"></div>
-              <div className="relative bg-gray-100 h-64 w-64 md:h-80 md:w-80 rounded-full overflow-hidden flex items-center justify-center">
-                <img
-                  src="/lovable-uploads/35225f20-87a8-4ff5-bdd0-d2c9daa46aa8.png"
-                  alt="Live4Life Medical Center"
-                  className="h-48 md:h-64"
-                />
+              <div className="relative rounded-lg overflow-hidden">
+                <AspectRatio ratio={4/3} className="w-full md:w-[400px]">
+                  <img
+                    src="/lovable-uploads/b8ad1cc4-d237-4e87-a846-fa0b3ac117ad.png"
+                    alt="Рецепция Live4Life Medical Center"
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
               </div>
             </div>
           </div>

@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Heart, HeartPulse, Users, Medal } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const About = () => {
   useEffect(() => {
@@ -45,6 +47,37 @@ const About = () => {
               <p className="text-xl text-gray-100">
                 Медицинският център Live4Life е профилиран в организирането и провеждането на профилактични прегледи за индивидуални и корпоративни клиенти.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Clinic Images */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <h2 className="text-3xl font-bold mb-10 text-center text-secondary">Нашият медицински център</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <Card className="overflow-hidden border-none shadow-lg">
+                <CardContent className="p-0">
+                  <AspectRatio ratio={4/3}>
+                    <img 
+                      src="/lovable-uploads/2d8e2758-f909-4ca8-84de-9598b438c871.png" 
+                      alt="Чакалня на медицински център Live4Life" 
+                      className="w-full h-full object-cover"
+                    />
+                  </AspectRatio>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden border-none shadow-lg">
+                <CardContent className="p-0">
+                  <AspectRatio ratio={4/3}>
+                    <img 
+                      src="/lovable-uploads/9dcd0c65-d1b0-4b55-9ab0-4a786995dfd0.png" 
+                      alt="Кът за изчакване в медицински център Live4Life" 
+                      className="w-full h-full object-cover"
+                    />
+                  </AspectRatio>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>

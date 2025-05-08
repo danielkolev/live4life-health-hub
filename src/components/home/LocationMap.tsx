@@ -1,4 +1,7 @@
 
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Card, CardContent } from "@/components/ui/card";
+
 const LocationMap = () => {
   return (
     <section className="section-padding bg-gray-50">
@@ -8,6 +11,34 @@ const LocationMap = () => {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Медицински Център Live4Life се намира в ж.к. Студентски комплекс, ул. Христо Данов 11, вх. Г, София, България
           </p>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          <Card className="overflow-hidden border-none shadow-lg">
+            <CardContent className="p-0">
+              <AspectRatio ratio={16/9}>
+                <img 
+                  src="/lovable-uploads/35225f20-87a8-4ff5-bdd0-d2c9daa46aa8.png" 
+                  alt="Вход на медицински център Live4Life" 
+                  className="w-full h-full object-cover"
+                />
+              </AspectRatio>
+            </CardContent>
+          </Card>
+          
+          <div className="flex items-center">
+            <div>
+              <h3 className="text-2xl font-bold mb-4 text-secondary">Нашият адрес</h3>
+              <p className="text-gray-600 mb-4">
+                ж.к. Студентски комплекс, ул. Христо Данов 11, вх. Г
+                <br />София, България
+              </p>
+              <p className="text-gray-600">
+                <span className="font-semibold">Телефон:</span> +359 89 020 9898<br />
+                <span className="font-semibold">Имейл:</span> lifeforlife@abv.bg
+              </p>
+            </div>
+          </div>
         </div>
         
         <div className="rounded-lg overflow-hidden shadow-lg">
