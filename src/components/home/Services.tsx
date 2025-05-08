@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { ArrowRight, Heart, HeartPulse, Users } from "lucide-react";
+import { ArrowRight, Calendar, HeartPulse, Users } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -10,21 +10,21 @@ const ServicesSection = () => {
       id: 1,
       icon: <HeartPulse className="h-12 w-12 text-primary" />,
       title: "Профилактични прегледи",
-      description: "Цялостни профилактични прегледи с индивидуален подход към всеки пациент.",
+      description: "Профилактичните прегледи и изследвания идентифицират и предотвратяват потенциални здравословни проблеми и дискомфорт.",
       link: "/services#preventive"
     },
     {
       id: 2,
       icon: <Users className="h-12 w-12 text-primary" />,
       title: "Корпоративно обслужване",
-      description: "Специализирани пакети за корпоративни клиенти с гъвкави условия.",
+      description: "Специализирани пакети за корпоративни клиенти с гъвкави условия и високо качество на обслужване.",
       link: "/services#corporate"
     },
     {
       id: 3,
-      icon: <Heart className="h-12 w-12 text-primary" />,
-      title: "Специализирани консултации",
-      description: "Консултации с висококвалифицирани специалисти в различни медицински области.",
+      icon: <Calendar className="h-12 w-12 text-primary" />,
+      title: "Специализирани изследвания",
+      description: "Доплер, ехокардиография, аудиометрия, ултразвукова диагностика и други съвременни изследвания.",
       link: "/services#consultations"
     },
   ];

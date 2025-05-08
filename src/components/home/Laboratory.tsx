@@ -1,5 +1,5 @@
 
-import { Check } from "lucide-react";
+import { Check, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -10,9 +10,9 @@ const LaboratorySection = () => {
     "Хормонални изследвания",
     "Туморни маркери",
     "Автоимунни изследвания",
-    "Микробиологични изследвания",
-    "Бързи получаване на резултати",
-    "Възможност за изследване по домовете"
+    "Микробиологични изследвания", 
+    "Пробовземане и обработка на кръвни проби",
+    "Домашни посещения за кръвни изследвания"
   ];
 
   return (
@@ -30,9 +30,9 @@ const LaboratorySection = () => {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Лабораторни изследвания</h2>
             <p className="text-gray-600 mb-6">
-              В Медицински център Live4Life си партнираме с водеща лаборатория, 
-              което ни позволява да предлагаме широк спектър от кръвни и други 
-              лабораторни изследвания с бързи и точни резултати.
+              В Медицински център Live4Life предлагаме широк спектър от кръвни и други 
+              лабораторни изследвания с бързи и точни резултати. Извършва се пробовземане,
+              интравенозни инфузии и всякакъв вид медицински манипулации.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
@@ -46,7 +46,7 @@ const LaboratorySection = () => {
             
             <Button asChild className="bg-primary hover:bg-primary-dark text-white">
               <Link to="/services#laboratory">
-                Научете повече за лабораторните изследвания
+                Запазете час за изследвания <Calendar className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
