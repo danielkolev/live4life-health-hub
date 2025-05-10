@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 @tailwind base;
@@ -115,6 +116,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 /* Animation utilities */
@@ -185,4 +187,69 @@ html {
 /* Focus ring for accessibility */
 .focus-ring {
   @apply focus:outline-none focus:ring-2 focus:ring-medical focus:ring-offset-2;
+}
+
+/* Blog specific styles */
+.blog-content h2 {
+  @apply text-2xl font-bold mt-8 mb-4 text-secondary-dark;
+}
+
+.blog-content h3 {
+  @apply text-xl font-bold mt-6 mb-3 text-secondary-dark;
+}
+
+.blog-content p {
+  @apply mb-4 text-gray-600 leading-relaxed;
+}
+
+.blog-content ul {
+  @apply list-disc pl-5 mb-4 text-gray-600 space-y-2;
+}
+
+.blog-content ol {
+  @apply list-decimal pl-5 mb-4 text-gray-600 space-y-2;
+}
+
+.blog-content blockquote {
+  @apply border-l-4 border-primary pl-4 italic my-6 text-gray-600;
+}
+
+.blog-content img {
+  @apply rounded-lg my-6 mx-auto;
+}
+
+/* Custom scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+}
+
+/* Animated underline for links */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  @apply bg-primary;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.animated-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
