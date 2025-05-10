@@ -13,11 +13,11 @@ const CallToAction = () => {
           Запазете своя час за профилактика при специалист или се свържете с нас за повече информация.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
+          <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 font-medium">
             <Calendar className="mr-2 h-5 w-5" />
             Запазете час
           </Button>
-          <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white/10">
+          <Button size="lg" variant="outline" asChild className="border-white text-gray-900 bg-white hover:bg-white/90 font-medium">
             <Link to="/contact">
               Свържете се с нас
             </Link>

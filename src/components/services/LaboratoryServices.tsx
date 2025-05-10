@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const LaboratoryServices = () => {
   const additionalServices = [
@@ -31,8 +32,10 @@ const LaboratoryServices = () => {
                 </li>
               ))}
             </ul>
-            <Button className="bg-primary hover:bg-primary-dark text-white">
-              Запазете час за изследване
+            <Button className="bg-primary hover:bg-primary-dark text-gray-900 font-medium" asChild>
+              <Link to="/contact">
+                Запазете час за изследване
+              </Link>
             </Button>
           </div>
           <div className="order-1 lg:order-2 rounded-lg overflow-hidden shadow-lg">
