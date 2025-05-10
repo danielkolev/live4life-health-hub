@@ -11,7 +11,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import SpecialistsPage from "./pages/Specialists";
 import FAQ from "./pages/FAQ";
-import ScrollToTop from "./utils/ScrollToTop";
+import ScrollToTop from "./components/utils/ScrollToTop";
 
 const queryClient = new QueryClient();
 
