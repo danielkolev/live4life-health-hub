@@ -97,5 +97,4 @@ const FAQSection = () => {
   );
 };
 
-// Memoize the component to prevent unnecessary re-renders
 export default React.memo(FAQSection);
