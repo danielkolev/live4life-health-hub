@@ -1,8 +1,12 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, Check } from "lucide-react";
+import { Link } from "react-router-dom";
+
 const IndividualServices = () => {
   const individualServices = ["Общ профилактичен преглед", "Кардиологичен скрининг", "Лабораторни изследвания", "Ултразвукова диагностика", "Специализирани консултации", "Образна диагностика"];
+  
   return <section id="preventive" className="section-padding">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -19,9 +23,11 @@ const IndividualServices = () => {
                   <span>{service}</span>
                 </li>)}
             </ul>
-            <Button className="bg-primary hover:bg-primary-dark text-white">
-              <Calendar className="mr-2 h-4 w-4" />
-              Запазете час за профилактика
+            <Button className="bg-primary hover:bg-primary-dark text-white" asChild>
+              <Link to="/contact">
+                <Calendar className="mr-2 h-4 w-4" />
+                Запазете час за профилактика
+              </Link>
             </Button>
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg">
@@ -31,4 +37,5 @@ const IndividualServices = () => {
       </div>
     </section>;
 };
+
 export default IndividualServices;

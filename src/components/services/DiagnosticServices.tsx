@@ -1,8 +1,11 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+
 const DiagnosticServices = () => {
   const diagnosticServices = ["Доплер", "Мамография", "Аудиометрия", "Ехокардиография", "Авторефрактометрия", "Абдоминална ехография", "Трансвагинална ехография", "Ехография на щитовидната жлеза"];
+  
   return <section id="diagnostics" className="section-padding bg-gray-50">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -22,12 +25,15 @@ const DiagnosticServices = () => {
                   <span>{service}</span>
                 </li>)}
             </ul>
-            <Button className="bg-primary hover:bg-primary-dark text-white">
-              Запазете час за изследване
+            <Button className="bg-primary hover:bg-primary-dark text-white" asChild>
+              <a href="https://superdoc.bg/klinika/mts-live-4-life" target="_blank" rel="noopener noreferrer">
+                Запазете час за изследване
+              </a>
             </Button>
           </div>
         </div>
       </div>
     </section>;
 };
+
 export default DiagnosticServices;

@@ -1,8 +1,12 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
+
 const CorporateServices = () => {
   const corporateServices = ["Групови профилактични прегледи", "Офис посещения на лекари", "Медицински консултации", "Специализирани пакети за компании", "Годишни здравни планове за служители", "Здравни обучения и семинари"];
+  
   return <section id="corporate" className="section-padding">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -19,8 +23,10 @@ const CorporateServices = () => {
                   <span>{service}</span>
                 </li>)}
             </ul>
-            <Button className="bg-primary hover:bg-primary-dark text-white">
-              Свържете се с нас за оферта
+            <Button className="bg-primary hover:bg-primary-dark text-white" asChild>
+              <Link to="/contact">
+                Свържете се с нас за оферта
+              </Link>
             </Button>
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg">
@@ -30,4 +36,5 @@ const CorporateServices = () => {
       </div>
     </section>;
 };
+
 export default CorporateServices;

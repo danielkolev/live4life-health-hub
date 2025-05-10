@@ -6,7 +6,6 @@ import ServicesHero from "@/components/services/ServicesHero";
 import IndividualServices from "@/components/services/IndividualServices";
 import DiagnosticServices from "@/components/services/DiagnosticServices";
 import CorporateServices from "@/components/services/CorporateServices";
-import SpecializedConsultations from "@/components/services/SpecializedConsultations";
 import LaboratoryServices from "@/components/services/LaboratoryServices";
 import MedicalEquipment from "@/components/services/MedicalEquipment";
 import CallToAction from "@/components/services/CallToAction";
@@ -32,9 +31,6 @@ const Services = () => {
         
         {/* Corporate Services */}
         <CorporateServices />
-        
-        {/* Specialized Consultations */}
-        <SpecializedConsultations />
         
         {/* Laboratory Section */}
         <LaboratoryServices />
