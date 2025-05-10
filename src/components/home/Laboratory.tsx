@@ -1,30 +1,13 @@
-
 import { Check, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
 const LaboratorySection = () => {
-  const labServices = [
-    "Клинико-химични изследвания",
-    "Хематологични изследвания",
-    "Хормонални изследвания",
-    "Туморни маркери",
-    "Автоимунни изследвания",
-    "Микробиологични изследвания", 
-    "Пробовземане и обработка на кръвни проби",
-    "Домашни посещения за кръвни изследвания"
-  ];
-
-  return (
-    <section className="section-padding">
+  const labServices = ["Клинико-химични изследвания", "Хематологични изследвания", "Хормонални изследвания", "Туморни маркери", "Автоимунни изследвания", "Микробиологични изследвания", "Пробовземане и обработка на кръвни проби", "Домашни посещения за кръвни изследвания"];
+  return <section className="section-padding">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <img 
-              src="https://images.unsplash.com/photo-1581093458791-9d020a31c33c?auto=format&fit=crop&q=80&w=800"
-              alt="Лабораторни изследвания"
-              className="rounded-lg shadow-lg"
-            />
+            <img alt="Лабораторни изследвания" className="rounded-lg shadow-lg" src="/lovable-uploads/6d5f2de5-796e-484b-8bbf-5f659f800742.jpg" />
           </div>
           
           <div>
@@ -36,12 +19,10 @@ const LaboratorySection = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
-              {labServices.map((service, index) => (
-                <div key={index} className="flex items-start">
+              {labServices.map((service, index) => <div key={index} className="flex items-start">
                   <Check className="h-5 w-5 text-primary mr-2 mt-1" />
                   <span>{service}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
             
             <Button asChild className="bg-primary hover:bg-primary-dark text-white">
@@ -52,8 +33,6 @@ const LaboratorySection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default LaboratorySection;
