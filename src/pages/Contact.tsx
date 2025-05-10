@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -7,13 +6,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
+import { sendContactEmail, ContactFormData } from "../utils/emailService";
 
 const Contact = () => {
   useEffect(() => {
     document.title = "Live4Life Medical Center | Контакти";
   }, []);
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     phone: "",
@@ -26,20 +26,30 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would normally send the form data to a server
-    console.log("Form submitted:", formData);
-    toast.success("Съобщението е изпратено успешно! Ще се свържем с вас скоро.", {
-      duration: 5000,
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: ""
-    });
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      toast.error("Моля, попълнете всички задължителни полета", {
+        duration: 3000,
+      });
+      return;
+    }
+    
+    // Send the email
+    const success = await sendContactEmail(formData);
+    
+    if (success) {
+      // Reset form on success
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: ""
+      });
+    }
   };
 
   const contactInfo = [

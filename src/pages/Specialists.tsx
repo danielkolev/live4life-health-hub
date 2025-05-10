@@ -23,7 +23,9 @@ const SpecialistsPage = () => {
           </div>
         </div>
         
-        {/* Team section moved from About page */}
+        <SpecialistsSection />
+        
+        {/* Team section moved after specialists list */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="text-center mb-12">
@@ -45,8 +47,6 @@ const SpecialistsPage = () => {
             </div>
           </div>
         </section>
-        
-        <SpecialistsSection />
       </main>
       <Footer />
     </div>
