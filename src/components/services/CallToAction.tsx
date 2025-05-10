@@ -13,11 +13,22 @@ const CallToAction = () => {
           Запазете своя час за профилактика при специалист или се свържете с нас за повече информация.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 font-medium">
-            <Calendar className="mr-2 h-5 w-5" />
-            Запазете час
+          <Button 
+            size="lg" 
+            className="bg-white text-gray-900 hover:bg-gray-100 font-medium"
+            asChild
+          >
+            <Link to="/contact">
+              <Calendar className="mr-2 h-5 w-5" />
+              Запазете час
+            </Link>
           </Button>
-          <Button size="lg" variant="outline" asChild className="border-white text-gray-900 bg-white hover:bg-white/90 font-medium">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            asChild 
+            className="border-white text-gray-900 bg-white hover:bg-white/90 font-medium"
+          >
             <Link to="/contact">
               Свържете се с нас
             </Link>
@@ -28,4 +39,5 @@ const CallToAction = () => {
   );
 };
 
-export default CallToAction;
+// Memoize the component to prevent unnecessary re-renders
+export default React.memo(CallToAction);

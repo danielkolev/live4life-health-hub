@@ -1,20 +1,19 @@
 
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Microscope } from "lucide-react";
 
-const MedicalEquipment = () => {
-  const equipment = [
-    "Ехограф GE Healthcare Versana Premier",
-    "ЕКГ апарат Schiller CARDIOVIT AT-102",
-    "Аудиометър GSI 18",
-    "Авторефрактометър Huvitz HRK-8000A",
-    "Дигитален рентгенов апарат Siemens Multix Impact"
-  ];
+const equipmentData = [
+  "Ехограф GE Healthcare Versana Premier",
+  "ЕКГ апарат Schiller CARDIOVIT AT-102",
+  "Аудиометър GSI 18",
+  "Авторефрактометър Huvitz HRK-8000A",
+  "Дигитален рентгенов апарат Siemens Multix Impact"
+];
 
+const MedicalEquipment = () => {
   return (
     <section id="equipment" className="section-padding bg-gray-50">
       <div className="container-custom">
@@ -26,11 +25,11 @@ const MedicalEquipment = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {equipment.map((item, index) => (
+          {equipmentData.map((item, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-2">
-                  <Microscope className="h-6 w-6 text-primary" />
+                  <Microscope className="h-6 w-6 text-primary" aria-hidden="true" />
                   <h3 className="font-semibold text-secondary">{item}</h3>
                 </div>
               </CardContent>
@@ -54,4 +53,5 @@ const MedicalEquipment = () => {
   );
 };
 
-export default MedicalEquipment;
+// Memoize the component to prevent unnecessary re-renders
+export default React.memo(MedicalEquipment);
