@@ -14,7 +14,7 @@ const ContactCTA = () => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-white hover:bg-white transition-all duration-300 hover:text-primary-dark text-white"
+            className="border-white hover:bg-white transition-all duration-300 hover:text-primary-dark text-primary-dark bg-white"
           >
             <Phone className="mr-2 h-5 w-5" />
             <a href="tel:+359890209898" className="text-inherit">+359 89 020 9898</a>
@@ -22,20 +22,13 @@ const ContactCTA = () => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-white hover:bg-white transition-all duration-300 hover:text-primary-dark text-white"
+            className="border-white hover:bg-white transition-all duration-300 hover:text-primary-dark text-primary-dark bg-white"
           >
             <Mail className="mr-2 h-5 w-5" />
             <a href="mailto:lifeforlife@abv.bg" className="text-inherit">lifeforlife@abv.bg</a>
           </Button>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
-            size="lg" 
-            className="bg-white text-primary hover:bg-gray-100 hover:text-primary-dark transition-all duration-300"
-            asChild
-          >
-            <Link to="/contact">Свържете се с нас</Link>
-          </Button>
           <Button 
             size="lg" 
             className="bg-secondary text-white hover:bg-secondary-light transition-all duration-300"
