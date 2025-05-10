@@ -5,8 +5,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { memo } from "react";
 
-const FAQSection = () => {
+const FAQSection = memo(() => {
   const faqItems = [
     {
       question: "Как мога да запазя час за преглед?",
@@ -69,6 +70,8 @@ const FAQSection = () => {
       </div>
     </section>
   );
-};
+});
+
+FAQSection.displayName = "FAQSection";
 
 export default FAQSection;
