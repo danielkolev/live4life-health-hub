@@ -41,7 +41,7 @@ const ContactCTA = () => {
             className="bg-secondary text-white hover:bg-secondary-light transition-all duration-300"
           >
             <Calendar className="mr-2 h-5 w-5" />
-            <a href="https://superdoc.bg" target="_blank" rel="noopener noreferrer">
+            <a href="https://superdoc.bg/klinika/mts-live-4-life" target="_blank" rel="noopener noreferrer">
               Запазете час в SuperDoc
             </a>
           </Button>

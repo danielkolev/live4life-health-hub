@@ -26,7 +26,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button size="lg" className="bg-primary hover:bg-primary-dark text-white transition-all duration-300">
                 <Calendar className="mr-2 h-5 w-5" />
-                <a href="https://superdoc.bg" target="_blank" rel="noopener noreferrer">Запазете час в SuperDoc</a>
+                <a href="https://superdoc.bg/klinika/mts-live-4-life" target="_blank" rel="noopener noreferrer">Запазете час в SuperDoc</a>
               </Button>
               <Button 
                 size="lg" 
@@ -41,7 +41,7 @@ const Hero = () => {
           </div>
           
           <div className="flex justify-center lg:justify-end animate-fade-in">
-            <a href="https://superdoc.bg" target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-sm p-8 rounded-full block">
+            <a href="https://superdoc.bg/klinika/mts-live-4-life" target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-sm p-8 rounded-full block">
               <img src="/lovable-uploads/fa20142c-c218-4352-9a85-856f2a5e3198.png" alt="Live4Life Medical Center Logo" className="max-w-[200px] md:max-w-sm" />
             </a>
           </div>

@@ -70,7 +70,7 @@ const Navbar = () => {
             className="bg-primary text-white hover:bg-primary-dark transition-all duration-300 shadow-sm ml-4"
           >
             <Calendar className="mr-2 h-4 w-4" />
-            <a href="https://superdoc.bg" target="_blank" rel="noopener noreferrer">
+            <a href="https://superdoc.bg/klinika/mts-live-4-life" target="_blank" rel="noopener noreferrer">
               Запазете час
             </a>
           </Button>
@@ -111,7 +111,7 @@ const Navbar = () => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Calendar className="mr-2 h-4 w-4" />
-                <a href="https://superdoc.bg" target="_blank" rel="noopener noreferrer">
+                <a href="https://superdoc.bg/klinika/mts-live-4-life" target="_blank" rel="noopener noreferrer">
                   Запазете час
                 </a>
               </Button>
