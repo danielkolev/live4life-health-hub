@@ -9,7 +9,6 @@ import Footer from "@/components/layout/Footer";
 import SpecialistsSection from "@/components/home/Specialists";
 import LaboratorySection from "@/components/home/Laboratory";
 import AwardSection from "@/components/home/Award";
-import PriceListSection from "@/components/home/PriceList";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -26,7 +25,6 @@ const Index = () => {
         <ServicesSection />
         <SpecialistsSection />
         <LaboratorySection />
-        <PriceListSection />
         <AwardSection />
         <ContactCTA />
         <LocationMap />
