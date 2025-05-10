@@ -3,15 +3,12 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 
-// Add event listener for content loaded to improve perceived performance
-document.addEventListener('DOMContentLoaded', () => {
-  const root = document.getElementById("root");
-  if (root) {
-    createRoot(root).render(<App />);
-  }
-});
+// Only create root once to prevent "removeChild" errors
+const rootElement = document.getElementById("root");
 
-// If the browser supports it, use createRoot immediately for faster initial render
-if (!document.getElementById('root')?.hasChildNodes()) {
-  createRoot(document.getElementById("root")!).render(<App />);
+if (rootElement) {
+  // Check if the root already has children
+  if (!rootElement.hasChildNodes()) {
+    createRoot(rootElement).render(<App />);
+  }
 }
