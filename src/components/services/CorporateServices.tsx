@@ -1,20 +1,9 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-
 const CorporateServices = () => {
-  const corporateServices = [
-    "Групови профилактични прегледи",
-    "Офис посещения на лекари",
-    "Медицински консултации",
-    "Специализирани пакети за компании",
-    "Годишни здравни планове за служители",
-    "Здравни обучения и семинари"
-  ];
-
-  return (
-    <section id="corporate" className="section-padding">
+  const corporateServices = ["Групови профилактични прегледи", "Офис посещения на лекари", "Медицински консултации", "Специализирани пакети за компании", "Годишни здравни планове за служители", "Здравни обучения и семинари"];
+  return <section id="corporate" className="section-padding">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -25,28 +14,20 @@ const CorporateServices = () => {
               пакети могат да бъдат персонализирани според нуждите и бюджета на компанията.
             </p>
             <ul className="space-y-3 mb-8">
-              {corporateServices.map((service, index) => (
-                <li key={index} className="flex items-start">
+              {corporateServices.map((service, index) => <li key={index} className="flex items-start">
                   <Check className="h-5 w-5 text-primary mr-2 mt-1" />
                   <span>{service}</span>
-                </li>
-              ))}
+                </li>)}
             </ul>
             <Button className="bg-primary hover:bg-primary-dark text-white">
               Свържете се с нас за оферта
             </Button>
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg">
-            <img 
-              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800"
-              alt="Корпоративни услуги"
-              className="w-full h-auto object-cover"
-            />
+            <img alt="Корпоративни услуги" className="w-full h-auto object-cover" src="/lovable-uploads/cb21535c-b54e-4bef-ac44-04d04e625ac9.jpg" />
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CorporateServices;
