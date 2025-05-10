@@ -1,8 +1,7 @@
-
 import { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { Heart, HeartPulse, Users, Medal } from "lucide-react";
+import { Heart, HeartPulse, Users, Medal, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { 
@@ -93,38 +92,10 @@ const About = () => {
           </div>
         </section>
 
-        {/* Clinic Images */}
+        {/* Clinic Images - Only keep the carousel */}
         <section className="section-padding bg-white">
-          <div className="container-custom">
-            <h2 className="text-3xl font-bold mb-10 text-center text-secondary">Нашият медицински център</h2>
-            
-            {/* Original static images */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <Card className="overflow-hidden border-none shadow-lg">
-                <CardContent className="p-0">
-                  <AspectRatio ratio={4 / 3}>
-                    <img 
-                      alt="Чакалня на медицински център Live4Life" 
-                      className="w-full h-full object-cover" 
-                      src="/lovable-uploads/3382e796-4c40-4a9c-b014-7874fc2a9e29.png" 
-                    />
-                  </AspectRatio>
-                </CardContent>
-              </Card>
-              <Card className="overflow-hidden border-none shadow-lg">
-                <CardContent className="p-0">
-                  <AspectRatio ratio={4 / 3}>
-                    <img 
-                      src="/lovable-uploads/9dcd0c65-d1b0-4b55-9ab0-4a786995dfd0.png" 
-                      alt="Кът за изчакване в медицински център Live4Life" 
-                      className="w-full h-full object-cover" 
-                    />
-                  </AspectRatio>
-                </CardContent>
-              </Card>
-            </div>
-            
-            {/* New clinic images carousel */}
+          <div className="container-custom">            
+            {/* Clinic images carousel */}
             <div className="my-12">
               <h3 className="text-xl font-semibold mb-6 text-center text-secondary">Разгледайте нашия център</h3>
               <div className="max-w-4xl mx-auto">
@@ -212,25 +183,37 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team */}
-        <section className="section-padding">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Нашият екип</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Екипът на Медицински център Live4Life се състои от висококвалифицирани специалисти с богат опит 
-                в различни области на медицината.
-              </p>
-            </div>
-
-            <div className="bg-primary/10 rounded-lg p-8 mt-8">
-              <p className="text-center text-xl text-gray-700">
-                "В нашия медицински център, всеки член на екипа споделя обща цел - да предоставя най-добрата възможна грижа 
-                за нашите пациенти. Вярваме в силата на профилактиката и ранната диагностика като ключови фактори за дълъг и здравословен живот."
-              </p>
-              <p className="text-center mt-4 font-semibold text-primary">
-                - Екипът на Live4Life
-              </p>
+        {/* Award Section - Moved from Homepage */}
+        <section className="bg-gray-100 py-16">
+          <div className="container-custom text-center">
+            <div className="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="flex flex-col justify-center">
+                  <div className="mb-6 flex justify-center md:justify-start">
+                    <Award className="h-12 w-12 text-primary" fill="#E0AE18" />
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Златна Фирма 2025</h2>
+                  <p className="text-lg text-gray-600 mb-6 text-left">
+                    Гордеем се, че Медицински център Live4Life е удостоен с престижната награда 
+                    <span className="font-semibold text-primary"> "Златна Фирма 2025"</span> за изключително качество 
+                    на предлаганите медицински услуги и високо клиентско доверие.
+                  </p>
+                  <div className="flex justify-center md:justify-start">
+                    <img 
+                      src="/lovable-uploads/2d8e2758-f909-4ca8-84de-9598b438c871.png"
+                      alt="Лого Live4Life"
+                      className="h-20"
+                    />
+                  </div>
+                </div>
+                <div className="flex justify-center">
+                  <img 
+                    src="/lovable-uploads/82ba0413-76dc-42b1-8e31-a79b3f160fc8.png"
+                    alt="Плакет Златна Фирма 2025"
+                    className="max-h-[350px] object-contain shadow-lg rounded-lg"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
