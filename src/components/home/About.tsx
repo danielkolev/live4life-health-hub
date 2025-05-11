@@ -1,12 +1,9 @@
-
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-
 const AboutSection = () => {
-  return (
-    <section className="section-padding">
+  return <section className="section-padding py-[30px]">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
@@ -31,20 +28,14 @@ const AboutSection = () => {
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-primary rounded-lg transform -rotate-3"></div>
               <div className="relative rounded-lg overflow-hidden w-4/5 mx-auto">
-                <AspectRatio ratio={1/1} className="w-full">
-                  <img
-                    src="/lovable-uploads/9ea23109-c9b6-433d-9838-a2fa74b52ab0.png"
-                    alt="Съвременни медицински технологии в МЦ Live4Life"
-                    className="w-full h-full object-cover"
-                  />
+                <AspectRatio ratio={1 / 1} className="w-full">
+                  <img src="/lovable-uploads/9ea23109-c9b6-433d-9838-a2fa74b52ab0.png" alt="Съвременни медицински технологии в МЦ Live4Life" className="w-full h-full object-cover" />
                 </AspectRatio>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
