@@ -170,7 +170,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex justify-center">
-                  <img alt="Плакет Златна Фирма 2025" className="max-h-[350px] object-contain shadow-lg rounded-lg" src="/lovable-uploads/b01dd648-20fd-4cbc-9504-9956c94f07e2.jpg" />
+                  <img alt="Плакет Златна Фирма 2025" className="max-h-[350px] object-contain shadow-lg rounded-lg" src="/lovable-uploads/17733fc4-3bc2-419b-bdff-891fd9acc302.jpg" />
                 </div>
               </div>
             </div>
