@@ -4,7 +4,17 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 
 const DiagnosticServices = () => {
-  const diagnosticServices = ["Доплер", "Мамография", "Аудиометрия", "Ехокардиография", "Авторефрактометрия", "Абдоминална ехография", "Трансвагинална ехография", "Ехография на щитовидната жлеза"];
+  const diagnosticServices = [
+    "Доплер",
+    "Мамография",
+    "Аудиометрия",
+    "Ехокардиография",
+    "Авторефрактометрия",
+    "Абдоминална ехография",
+    "Трансвагинална ехография",
+    "Ехография на щитовидната жлеза",
+    "Управление на хронични заболявания"
+  ];
   
   return <section id="diagnostics" className="section-padding bg-gray-50">
       <div className="container-custom">

@@ -7,7 +7,6 @@ import IndividualServices from "@/components/services/IndividualServices";
 import DiagnosticServices from "@/components/services/DiagnosticServices";
 import CorporateServices from "@/components/services/CorporateServices";
 import LaboratoryServices from "@/components/services/LaboratoryServices";
-import MedicalEquipment from "@/components/services/MedicalEquipment";
 import CallToAction from "@/components/services/CallToAction";
 
 const Services = () => {
@@ -38,20 +37,17 @@ const Services = () => {
           </div>
         </section>
         
+        {/* Diagnostic Services - Now in second position */}
+        <DiagnosticServices />
+        
         {/* Individual Services */}
         <IndividualServices />
-        
-        {/* Diagnostic Services */}
-        <DiagnosticServices />
         
         {/* Corporate Services */}
         <CorporateServices />
         
         {/* Laboratory Section */}
         <LaboratoryServices />
-        
-        {/* Medical Equipment */}
-        <MedicalEquipment />
         
         {/* Call to Action */}
         <CallToAction />
