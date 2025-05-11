@@ -4,79 +4,54 @@ import Footer from "@/components/layout/Footer";
 import { Heart, HeartPulse, Users, Medal, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious 
-} from "@/components/ui/carousel";
-
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 const About = () => {
   useEffect(() => {
     document.title = "Live4Life Medical Center | За нас";
   }, []);
-  
-  const values = [
-    {
-      icon: <HeartPulse className="h-10 w-10 text-primary" />,
-      title: "Качествена грижа",
-      description: "Предоставяме висококачествена медицинска грижа с индивидуален подход към всеки пациент."
-    }, 
-    {
-      icon: <Users className="h-10 w-10 text-primary" />,
-      title: "Професионален екип",
-      description: "Нашият екип от специалисти е с богат опит и непрекъснато актуализира своите знания и умения."
-    }, 
-    {
-      icon: <Heart className="h-10 w-10 text-primary" />,
-      title: "Фокус върху профилактиката",
-      description: "Вярваме, че профилактиката и ранната диагностика са ключът към доброто здраве и благосъстояние."
-    }, 
-    {
-      icon: <Medal className="h-10 w-10 text-primary" />,
-      title: "Съвременно оборудване",
-      description: "Разполагаме с модерно медицинско оборудване за прецизна диагностика и ефективно лечение."
-    }
-  ];
-  
-  const clinicImages = [
-    {
-      src: "/lovable-uploads/6ff7a396-d673-45a7-9e72-2f6e2bc4f249.png",
-      alt: "Чакалня с жълти фотьойли и логото на Live4Life"
-    },
-    {
-      src: "/lovable-uploads/19882ede-481e-479e-ac01-9cffacbce751.png",
-      alt: "Рецепция на медицински център Live4Life"
-    },
-    {
-      src: "/lovable-uploads/1476a06d-d45c-4206-b84c-abb1f4c0f3d4.png",
-      alt: "Коридор с чакалня в медицински център Live4Life"
-    },
-    {
-      src: "/lovable-uploads/e072d148-eccf-47cd-995e-aeb170fe4670.png",
-      alt: "Чакалня и коридор на медицински център Live4Life"
-    },
-    {
-      src: "/lovable-uploads/ee8c308b-4623-4c01-974c-6bbf2368a19d.png",
-      alt: "Рецепция на медицински център Live4Life отблизо"
-    },
-    {
-      src: "/lovable-uploads/e3682f61-c892-44cb-9192-eac189a0a711.png",
-      alt: "Рецепция и чакалня на медицински център Live4Life"
-    },
-    {
-      src: "/lovable-uploads/c005b74d-230e-445f-8ef2-7d472b6750ea.png",
-      alt: "Лого на стената на медицински център Live4Life"
-    },
-    {
-      src: "/lovable-uploads/ad10f96b-628e-4aa0-bb4a-caaae8080fbc.png",
-      alt: "Награда Златна фирма 2025 на медицински център Live4Life"
-    }
-  ];
-  
-  return (
-    <div className="min-h-screen flex flex-col">
+  const values = [{
+    icon: <HeartPulse className="h-10 w-10 text-primary" />,
+    title: "Качествена грижа",
+    description: "Предоставяме висококачествена медицинска грижа с индивидуален подход към всеки пациент."
+  }, {
+    icon: <Users className="h-10 w-10 text-primary" />,
+    title: "Професионален екип",
+    description: "Нашият екип от специалисти е с богат опит и непрекъснато актуализира своите знания и умения."
+  }, {
+    icon: <Heart className="h-10 w-10 text-primary" />,
+    title: "Фокус върху профилактиката",
+    description: "Вярваме, че профилактиката и ранната диагностика са ключът към доброто здраве и благосъстояние."
+  }, {
+    icon: <Medal className="h-10 w-10 text-primary" />,
+    title: "Съвременно оборудване",
+    description: "Разполагаме с модерно медицинско оборудване за прецизна диагностика и ефективно лечение."
+  }];
+  const clinicImages = [{
+    src: "/lovable-uploads/6ff7a396-d673-45a7-9e72-2f6e2bc4f249.png",
+    alt: "Чакалня с жълти фотьойли и логото на Live4Life"
+  }, {
+    src: "/lovable-uploads/19882ede-481e-479e-ac01-9cffacbce751.png",
+    alt: "Рецепция на медицински център Live4Life"
+  }, {
+    src: "/lovable-uploads/1476a06d-d45c-4206-b84c-abb1f4c0f3d4.png",
+    alt: "Коридор с чакалня в медицински център Live4Life"
+  }, {
+    src: "/lovable-uploads/e072d148-eccf-47cd-995e-aeb170fe4670.png",
+    alt: "Чакалня и коридор на медицински център Live4Life"
+  }, {
+    src: "/lovable-uploads/ee8c308b-4623-4c01-974c-6bbf2368a19d.png",
+    alt: "Рецепция на медицински център Live4Life отблизо"
+  }, {
+    src: "/lovable-uploads/e3682f61-c892-44cb-9192-eac189a0a711.png",
+    alt: "Рецепция и чакалня на медицински център Live4Life"
+  }, {
+    src: "/lovable-uploads/c005b74d-230e-445f-8ef2-7d472b6750ea.png",
+    alt: "Лого на стената на медицински център Live4Life"
+  }, {
+    src: "/lovable-uploads/ad10f96b-628e-4aa0-bb4a-caaae8080fbc.png",
+    alt: "Награда Златна фирма 2025 на медицински център Live4Life"
+  }];
+  return <div className="min-h-screen flex flex-col">
       <Navbar />
 
       <div className="pt-20">
@@ -101,23 +76,17 @@ const About = () => {
               <div className="max-w-4xl mx-auto">
                 <Carousel className="w-full">
                   <CarouselContent>
-                    {clinicImages.map((image, index) => (
-                      <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    {clinicImages.map((image, index) => <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                         <div className="p-1">
                           <Card className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
                             <CardContent className="p-0">
-                              <AspectRatio ratio={3/4} className="bg-gray-100">
-                                <img 
-                                  src={image.src} 
-                                  alt={image.alt}
-                                  className="w-full h-full object-cover" 
-                                />
+                              <AspectRatio ratio={3 / 4} className="bg-gray-100">
+                                <img src={image.src} alt={image.alt} className="w-full h-full object-cover" />
                               </AspectRatio>
                             </CardContent>
                           </Card>
                         </div>
-                      </CarouselItem>
-                    ))}
+                      </CarouselItem>)}
                   </CarouselContent>
                   <CarouselPrevious className="hidden md:flex left-0" />
                   <CarouselNext className="hidden md:flex right-0" />
@@ -170,15 +139,13 @@ const About = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {values.map((value, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md flex">
+              {values.map((value, index) => <div key={index} className="bg-white p-6 rounded-lg shadow-md flex">
                   <div className="mr-4 mt-1">{value.icon}</div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
                     <p className="text-gray-600">{value.description}</p>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -199,19 +166,11 @@ const About = () => {
                     на предлаганите медицински услуги и високо клиентско доверие.
                   </p>
                   <div className="flex justify-center md:justify-start">
-                    <img 
-                      src="/lovable-uploads/2d8e2758-f909-4ca8-84de-9598b438c871.png"
-                      alt="Лого Live4Life"
-                      className="h-20"
-                    />
+                    <img src="/lovable-uploads/2d8e2758-f909-4ca8-84de-9598b438c871.png" alt="Лого Live4Life" className="h-20" />
                   </div>
                 </div>
                 <div className="flex justify-center">
-                  <img 
-                    src="/lovable-uploads/82ba0413-76dc-42b1-8e31-a79b3f160fc8.png"
-                    alt="Плакет Златна Фирма 2025"
-                    className="max-h-[350px] object-contain shadow-lg rounded-lg"
-                  />
+                  <img alt="Плакет Златна Фирма 2025" className="max-h-[350px] object-contain shadow-lg rounded-lg" src="/lovable-uploads/b01dd648-20fd-4cbc-9504-9956c94f07e2.jpg" />
                 </div>
               </div>
             </div>
@@ -220,8 +179,6 @@ const About = () => {
       </div>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
