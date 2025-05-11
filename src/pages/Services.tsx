@@ -23,6 +23,21 @@ const Services = () => {
         {/* Hero Section */}
         <ServicesHero />
         
+        {/* Service Philosophy */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl font-bold mb-6 text-secondary">Нашата философия</h2>
+              <p className="text-lg text-gray-600 mb-4">
+                В Медицински център Live4Life вярваме, че вашият комфорт и благополучие са в основата на всичко, което правим!
+              </p>
+              <p className="text-lg text-gray-600 font-semibold">
+                Вашето здраве е наш приоритет!
+              </p>
+            </div>
+          </div>
+        </section>
+        
         {/* Individual Services */}
         <IndividualServices />
         

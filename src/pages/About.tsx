@@ -5,10 +5,12 @@ import { Heart, HeartPulse, Users, Medal, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
 const About = () => {
   useEffect(() => {
     document.title = "Live4Life Medical Center | За нас";
   }, []);
+
   const values = [{
     icon: <HeartPulse className="h-10 w-10 text-primary" />,
     title: "Качествена грижа",
@@ -26,6 +28,7 @@ const About = () => {
     title: "Съвременно оборудване",
     description: "Разполагаме с модерно медицинско оборудване за прецизна диагностика и ефективно лечение."
   }];
+
   const clinicImages = [{
     src: "/lovable-uploads/6ff7a396-d673-45a7-9e72-2f6e2bc4f249.png",
     alt: "Чакалня с жълти фотьойли и логото на Live4Life"
@@ -51,6 +54,7 @@ const About = () => {
     src: "/lovable-uploads/ad10f96b-628e-4aa0-bb4a-caaae8080fbc.png",
     alt: "Награда Златна фирма 2025 на медицински център Live4Life"
   }];
+
   return <div className="min-h-screen flex flex-col">
       <Navbar />
 
@@ -62,6 +66,21 @@ const About = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-6">За нас</h1>
               <p className="text-xl text-gray-100">
                 Медицинският център Live4Life е профилиран в организирането и провеждането на профилактични прегледи за индивидуални и корпоративни клиенти.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* New Introduction Section */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl font-bold mb-6 text-secondary">Вашето здраве е наш приоритет</h2>
+              <p className="text-lg text-gray-600 mb-4">
+                Цялостна грижа в медицински център Live4Life! Ние се ангажираме да предоставим на вас и вашето семейство медицински грижи от най-високо ниво в широка гама от специалности.
+              </p>
+              <p className="text-lg text-gray-600">
+                От превантивни здравни услуги до експертно лечение на сложни състояния, нашият екип от опитни професионалисти е тук, за да ви преведе през всяка стъпка към по-добро здраве.
               </p>
             </div>
           </div>
@@ -181,4 +200,5 @@ const About = () => {
       <Footer />
     </div>;
 };
+
 export default About;
