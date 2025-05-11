@@ -7,7 +7,6 @@ import LocationMap from "@/components/home/LocationMap";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SpecialistsSection from "@/components/home/Specialists";
-import AwardSection from "@/components/home/Award";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -23,7 +22,6 @@ const Index = () => {
         <AboutSection />
         <ServicesSection />
         <SpecialistsSection />
-        <AwardSection />
         <ContactCTA />
         <LocationMap />
       </main>
