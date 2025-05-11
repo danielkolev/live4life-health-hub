@@ -22,15 +22,9 @@ const SpecialistsPage = () => {
         <SpecialistsSection />
         
         {/* Team section moved after specialists list */}
-        <section className="section-padding bg-gray-50 py-[30px]">
+        <section className="section-padding bg-gray-50 py-[20px]">
           <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Нашият екип</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Екипът на Медицински център Live4Life се състои от висококвалифицирани специалисти с богат опит 
-                в различни области на медицината.
-              </p>
-            </div>
+            
 
             <div className="bg-primary/10 rounded-lg p-8 mt-8">
               <p className="text-center text-xl text-gray-700">
