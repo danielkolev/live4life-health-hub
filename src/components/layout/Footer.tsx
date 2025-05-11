@@ -80,9 +80,12 @@ const Footer = () => {
             <p className="text-gray-500 text-sm">
               © {new Date().getFullYear()} Medical Center Live4Life. Всички права запазени.
             </p>
-            <div className="flex items-center mt-4 md:mt-0">
+            <div className="flex items-center mt-4 md:mt-0 space-x-3">
               <span className="text-sm text-gray-500 flex items-center">
                 Направено с <Heart className="mx-1 h-4 w-4 text-red-400" /> от Live4Life
+              </span>
+              <span className="text-sm text-gray-500">
+                Дизайн от <a href="https://smartsitedigital.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SmartSiteDigital</a>
               </span>
             </div>
           </div>
