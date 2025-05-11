@@ -1,9 +1,12 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const LaboratoryServices = () => {
-  const additionalServices = ["Пробовземане", "Интравенозни инфузии", "Медицински манипулации", "Домашни посещения за медицински прегледи", "Домашни посещения за кръвни изследвания"];
+  const additionalServices = ["Пробовземане", "Интравенозни инфузии", "Медицински манипулации", "Домашни посещения за медицински прегледи"];
+  
   return <section id="laboratory" className="section-padding py-[29px]">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -33,4 +36,5 @@ const LaboratoryServices = () => {
       </div>
     </section>;
 };
+
 export default LaboratoryServices;
