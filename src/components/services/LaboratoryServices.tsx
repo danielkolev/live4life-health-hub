@@ -27,7 +27,7 @@ const LaboratoryServices = () => {
             </Button>
           </div>
           <div className="order-1 lg:order-2 rounded-lg overflow-hidden shadow-lg">
-            <img src="/lovable-uploads/9b653a3f-0f28-4a6f-8e65-5a80f94b53c5.png" alt="Специалисти в МЦ Live4Life" className="w-full h-auto object-cover" />
+            <img alt="Специалисти в МЦ Live4Life" className="w-full h-auto object-cover" src="/lovable-uploads/ce9b6b38-5b11-40b0-ab89-019563548313.jpg" />
           </div>
         </div>
       </div>
