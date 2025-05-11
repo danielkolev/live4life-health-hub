@@ -68,7 +68,7 @@ const About = () => {
         </section>
 
         {/* Clinic Images - Only keep the carousel */}
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-white py-0">
           <div className="container-custom">            
             {/* Clinic images carousel */}
             <div className="my-12">
@@ -97,7 +97,7 @@ const About = () => {
         </section>
 
         {/* Mission & Vision */}
-        <section className="section-padding">
+        <section className="section-padding py-[5px]">
           <div className="container-custom">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
@@ -128,7 +128,7 @@ const About = () => {
         </section>
 
         {/* Values */}
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-gray-50 py-[29px]">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Нашите ценности</h2>
