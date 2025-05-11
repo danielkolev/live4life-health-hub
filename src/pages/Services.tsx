@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -8,14 +7,11 @@ import DiagnosticServices from "@/components/services/DiagnosticServices";
 import CorporateServices from "@/components/services/CorporateServices";
 import LaboratoryServices from "@/components/services/LaboratoryServices";
 import CallToAction from "@/components/services/CallToAction";
-
 const Services = () => {
   useEffect(() => {
     document.title = "Live4Life Medical Center | Услуги";
   }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navbar />
 
       <div className="pt-20">
@@ -23,7 +19,7 @@ const Services = () => {
         <ServicesHero />
         
         {/* Service Philosophy */}
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-white py-[30px]">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-6 text-secondary">Нашата философия</h2>
@@ -54,8 +50,6 @@ const Services = () => {
       </div>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Services;
