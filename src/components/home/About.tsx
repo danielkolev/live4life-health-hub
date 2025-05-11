@@ -30,7 +30,7 @@ const AboutSection = () => {
           <div className="order-1 lg:order-2">
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-primary rounded-lg transform -rotate-3"></div>
-              <div className="relative rounded-lg overflow-hidden">
+              <div className="relative rounded-lg overflow-hidden w-4/5 mx-auto">
                 <AspectRatio ratio={1/1} className="w-full">
                   <img
                     src="/lovable-uploads/9ea23109-c9b6-433d-9838-a2fa74b52ab0.png"

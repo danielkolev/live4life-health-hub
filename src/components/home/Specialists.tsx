@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { User } from "lucide-react";
+import { useEffect, useState, useCallback } from "react";
 import { 
   Carousel, 
   CarouselContent, 
@@ -48,6 +49,25 @@ const featuredSpecialists = [
 ];
 
 const SpecialistsSection = () => {
+  const [api, setApi] = useState<any>(null);
+  
+  // Функция за автоматична смяна на слайдера
+  const scrollNext = useCallback(() => {
+    if (api) {
+      api.scrollNext();
+    }
+  }, [api]);
+  
+  // Активираме автоматичната смяна на всеки 5 секунди
+  useEffect(() => {
+    if (!api) return;
+    
+    const interval = setInterval(scrollNext, 5000);
+    
+    // Почистване на интервала при unmount
+    return () => clearInterval(interval);
+  }, [api, scrollNext]);
+
   return (
     <section className="section-padding bg-gradient-to-b from-white to-gray-50" id="specialists">
       <div className="container-custom">
@@ -65,6 +85,7 @@ const SpecialistsSection = () => {
               align: "start",
               loop: true,
             }}
+            setApi={setApi}
             className="w-full px-4"
           >
             <CarouselContent>
@@ -102,7 +123,7 @@ const SpecialistsSection = () => {
         </div>
 
         <div className="mt-6 text-center">
-          <Button size="lg" asChild className="bg-medical hover:bg-medical-dark text-white">
+          <Button size="lg" asChild className="bg-primary hover:bg-primary-dark text-white">
             <Link to="/specialists">
               Вижте всички специалисти <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
