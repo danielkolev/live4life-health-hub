@@ -14,11 +14,6 @@ const featuredSpecialists = [{
   specialty: "Общопрактикуващ лекар",
   image: "https://superdoc.bg/photos/doctors/large/VOwzrqZ05xQyhEBIUQzsubEwQPluMYrQpJLonPoc.jpg"
 }, {
-  id: 2,
-  name: "Д-р Росен Разбойников",
-  specialty: "Съдов хирург",
-  image: "https://superdoc.bg/photos/doctors/small/qjKjFolEFJaZrXY4J8Oilsrac8HEDrF1MJkp7YkD.jpg"
-}, {
   id: 3,
   name: "Д-р Ива Великова",
   specialty: "Невролог",
