@@ -4,9 +4,20 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const DiagnosticServices = () => {
-  const diagnosticServices = ["Доплер", "Мамография", "Аудиометрия", "Ехокардиография", "Авторефрактометрия", "Абдоминална ехография", "Трансвагинална ехография", "Ехография на щитовидната жлеза", "Управление на хронични заболявания"];
+  const diagnosticServices = [
+    "Доплер", 
+    "Ехомамография", 
+    "Аудиометрия", 
+    "Ехокардиография", 
+    "Авторефрактометрия", 
+    "Абдоминална ехография", 
+    "Трансвагинална ехография", 
+    "Ехография на щитовидната жлеза", 
+    "Управление на хронични заболявания"
+  ];
   
-  return <section id="diagnostics" className="section-padding bg-gray-50 py-[30px]">
+  return (
+    <section id="diagnostics" className="section-padding bg-gray-50 py-[30px]">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-6 text-secondary">Диагностични изследвания</h2>
@@ -40,7 +51,8 @@ const DiagnosticServices = () => {
           </Button>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default DiagnosticServices;

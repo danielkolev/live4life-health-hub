@@ -7,6 +7,8 @@ import LocationMap from "@/components/home/LocationMap";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SpecialistsSection from "@/components/home/Specialists";
+import AwardSection from "@/components/home/Award";
+import LaboratorySection from "@/components/home/Laboratory";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -19,7 +21,9 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <AwardSection />
         <AboutSection />
+        <LaboratorySection />
         <ServicesSection />
         <SpecialistsSection />
         <ContactCTA />

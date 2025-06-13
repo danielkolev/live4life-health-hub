@@ -14,7 +14,8 @@ const Services = () => {
     document.title = "Live4Life Medical Center | Услуги";
   }, []);
   
-  return <div className="min-h-screen flex flex-col">
+  return (
+    <div className="min-h-screen flex flex-col">
       <Navbar />
 
       <div className="pt-20">
@@ -49,7 +50,10 @@ const Services = () => {
           </div>
         </section>
         
-        {/* Diagnostic Services - Now in second position */}
+        {/* Laboratory Section - Now in second position */}
+        <LaboratoryServices />
+        
+        {/* Diagnostic Services */}
         <DiagnosticServices />
         
         {/* Individual Services */}
@@ -58,14 +62,13 @@ const Services = () => {
         {/* Corporate Services */}
         <CorporateServices />
         
-        {/* Laboratory Section */}
-        <LaboratoryServices />
-        
         {/* Call to Action */}
         <CallToAction />
       </div>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Services;
