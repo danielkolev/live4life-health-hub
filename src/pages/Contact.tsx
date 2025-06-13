@@ -1,56 +1,13 @@
-import { useState, useEffect } from "react";
+
+import { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import { toast } from "sonner";
-import { sendContactEmail, ContactFormData } from "../utils/emailService";
 
 const Contact = () => {
   useEffect(() => {
     document.title = "Live4Life Medical Center | Контакти";
   }, []);
-
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: ""
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-      toast.error("Моля, попълнете всички задължителни полета", {
-        duration: 3000,
-      });
-      return;
-    }
-    
-    // Send the email
-    const success = await sendContactEmail(formData);
-    
-    if (success) {
-      // Reset form on success
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: ""
-      });
-    }
-  };
 
   const contactInfo = [
     {
@@ -95,97 +52,18 @@ const Contact = () => {
         {/* Contact Information */}
         <section className="section-padding">
           <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-3xl font-bold mb-6 text-secondary">Информация за контакт</h2>
-                <div className="space-y-6">
-                  {contactInfo.map((info, index) => (
-                    <div key={index} className="flex items-start">
-                      <div className="mr-4 mt-1">{info.icon}</div>
-                      <div>
-                        <h3 className="text-lg font-semibold mb-1">{info.title}</h3>
-                        <p className="text-gray-600 whitespace-pre-line">{info.content}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h2 className="text-3xl font-bold mb-6 text-secondary">Изпратете ни съобщение</h2>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Име *
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Вашето име"
-                      required
-                    />
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-6 text-secondary text-center">Информация за контакт</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {contactInfo.map((info, index) => (
+                  <div key={index} className="flex items-start p-6 bg-white rounded-lg shadow-md">
+                    <div className="mr-4 mt-1">{info.icon}</div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        Имейл *
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="вашият@имейл.com"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                        Телефон
-                      </label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="+359 XX XXX XXX"
-                      />
+                      <h3 className="text-lg font-semibold mb-1">{info.title}</h3>
+                      <p className="text-gray-600 whitespace-pre-line">{info.content}</p>
                     </div>
                   </div>
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                      Тема *
-                    </label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="Тема на съобщението"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                      Съобщение *
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Вашето съобщение..."
-                      rows={5}
-                      required
-                    />
-                  </div>
-                  <Button type="submit" className="bg-primary hover:bg-primary-dark text-white w-full">
-                    Изпрати съобщение
-                  </Button>
-                </form>
+                ))}
               </div>
             </div>
           </div>
