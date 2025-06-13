@@ -25,30 +25,36 @@ const specialists: Specialist[] = [{
   superdocLink: "https://superdoc.bg/lekar/d-r-vladimir-naunov"
 }, {
   id: 3,
+  name: "Д-р Енвер Атип",
+  specialty: "Съдов хирург",
+  image: "/lovable-uploads/5f3b6504-bf21-410f-9c00-08169df720a6.png",
+  superdocLink: "https://superdoc.bg/lekar/enver-atip"
+}, {
+  id: 4,
   name: "Д-р Юсуф Мусов",
   specialty: "Ендокринолог",
   image: "https://superdoc.bg/photos/doctors/small/Q1fn82wkix8zi1Dtj3cUY1HdS014wA3tAV4ErZuO.jpg",
   superdocLink: "https://superdoc.bg/lekar/yusuf-musov"
 }, {
-  id: 4,
+  id: 5,
   name: "Д-р Ива Великова",
   specialty: "Невролог",
   image: "https://superdoc.bg/photos/doctors/small/HhyOfilfrV5XGTV2feFFcWIyDMfCAPzJ9wk6ssWF.jpg",
   superdocLink: "https://superdoc.bg/lekar/iva-velikova"
 }, {
-  id: 5,
+  id: 6,
   name: "Д-р Тодор Калчев",
   specialty: "Ортопед",
   image: "https://superdoc.bg/photos/doctors/small/ZmMe5qAz3QNsgTiwDOH3Z8ZpVT25nuLimTeqwhDl.jpg",
   superdocLink: "https://superdoc.bg/lekar/todor-kalchev"
 }, {
-  id: 6,
+  id: 7,
   name: "Д-р Йордан Томов",
   specialty: "Уролог",
   image: "https://superdoc.bg/photos/doctors/small/45JlGnlo78RPTM78XoEASGVyJOFpUKUDYEt3TuMH.jpg",
   superdocLink: "https://superdoc.bg/lekar/yordan-tomov"
 }, {
-  id: 7,
+  id: 8,
   name: "Д-р Анастасия Аврамова",
   specialty: "Акушер-гинеколог",
   image: "https://superdoc.bg/photos/doctors/small/kiWBQLJ4GEMpP72pwJorYf55voBVEiw7k9OHGrz0.jpg",

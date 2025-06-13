@@ -20,15 +20,21 @@ const featuredSpecialists = [{
   image: "/lovable-uploads/7e2d0a6d-d316-4d11-ab97-c33b19b51671.png"
 }, {
   id: 3,
+  name: "Д-р Енвер Атип",
+  specialty: "Съдов хирург",
+  image: "/lovable-uploads/5f3b6504-bf21-410f-9c00-08169df720a6.png"
+}, {
+  id: 4,
   name: "Д-р Ива Великова",
   specialty: "Невролог",
   image: "https://superdoc.bg/photos/doctors/small/HhyOfilfrV5XGTV2feFFcWIyDMfCAPzJ9wk6ssWF.jpg"
 }, {
-  id: 4,
+  id: 5,
   name: "Д-р Юсуф Мусов",
   specialty: "Ендокринолог",
   image: "https://superdoc.bg/photos/doctors/small/Q1fn82wkix8zi1Dtj3cUY1HdS014wA3tAV4ErZuO.jpg"
 }];
+
 const SpecialistsSection = () => {
   const [api, setApi] = useState<any>(null);
 
