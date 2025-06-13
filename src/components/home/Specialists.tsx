@@ -14,6 +14,11 @@ const featuredSpecialists = [{
   specialty: "Общопрактикуващ лекар",
   image: "https://superdoc.bg/photos/doctors/large/VOwzrqZ05xQyhEBIUQzsubEwQPluMYrQpJLonPoc.jpg"
 }, {
+  id: 2,
+  name: "Д-р Владимир Наунов",
+  specialty: "Кардиолог",
+  image: "/lovable-uploads/7e2d0a6d-d316-4d11-ab97-c33b19b51671.png"
+}, {
   id: 3,
   name: "Д-р Ива Великова",
   specialty: "Невролог",
@@ -23,11 +28,6 @@ const featuredSpecialists = [{
   name: "Д-р Юсуф Мусов",
   specialty: "Ендокринолог",
   image: "https://superdoc.bg/photos/doctors/small/Q1fn82wkix8zi1Dtj3cUY1HdS014wA3tAV4ErZuO.jpg"
-}, {
-  id: 5,
-  name: "Д-р Тодор Калчев",
-  specialty: "Ортопед",
-  image: "https://superdoc.bg/photos/doctors/small/ZmMe5qAz3QNsgTiwDOH3Z8ZpVT25nuLimTeqwhDl.jpg"
 }];
 const SpecialistsSection = () => {
   const [api, setApi] = useState<any>(null);

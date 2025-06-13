@@ -18,6 +18,12 @@ const specialists: Specialist[] = [{
   image: "https://superdoc.bg/photos/doctors/large/VOwzrqZ05xQyhEBIUQzsubEwQPluMYrQpJLonPoc.jpg",
   superdocLink: "https://superdoc.bg/lekar/valentin-yanev"
 }, {
+  id: 2,
+  name: "Д-р Владимир Наунов",
+  specialty: "Кардиолог",
+  image: "/lovable-uploads/7e2d0a6d-d316-4d11-ab97-c33b19b51671.png",
+  superdocLink: "https://superdoc.bg/lekar/d-r-vladimir-naunov"
+}, {
   id: 3,
   name: "Д-р Юсуф Мусов",
   specialty: "Ендокринолог",
