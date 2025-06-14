@@ -47,11 +47,11 @@ const LaboratorySection = () => {
             </div>
           </div>
           
-          <div className="rounded-lg overflow-hidden">
+          <div className="rounded-lg overflow-hidden flex justify-center">
             <img 
               src="/lovable-uploads/3382e796-4c40-4a9c-b014-7874fc2a9e29.png" 
               alt="Лабораторни изследвания в МЦ Live4Life" 
-              className="w-full h-auto rounded-lg shadow-md"
+              className="max-w-sm h-auto rounded-lg shadow-md object-contain"
             />
           </div>
         </div>
