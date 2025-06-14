@@ -58,6 +58,7 @@ const SpecialistsSection = () => {
     // Почистване на интервала при unmount
     return () => clearInterval(interval);
   }, [api, scrollNext]);
+  
   return <section id="specialists" className="section-padding bg-gradient-to-b from-white to-gray-50 py-[30px]">
       <div className="container-custom">
         <div className="text-center mb-12 animate-fade-in">
@@ -78,7 +79,7 @@ const SpecialistsSection = () => {
                   <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100 bg-white/90 soft-shadow h-full">
                     <CardContent className="p-0">
                       <AspectRatio ratio={1 / 1} className="bg-gray-100">
-                        {specialist.image ? <img src={specialist.image} alt={specialist.name} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" /> : <div className="h-full w-full flex items-center justify-center bg-gray-100">
+                        {specialist.image ? <img src={specialist.image} alt={specialist.name} className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105" /> : <div className="h-full w-full flex items-center justify-center bg-gray-100">
                             <User className="h-16 w-16 text-gray-300" />
                           </div>}
                       </AspectRatio>
