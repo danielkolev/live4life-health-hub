@@ -91,7 +91,9 @@ const SpecialistsList = () => {
                         <img
                           src={specialist.image}
                           alt={specialist.name}
-                          className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
+                          className={`w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${
+                            specialist.name === "Д-р Владимир Наунов" ? "object-center" : "object-top"
+                          }`}
                         />
                       ) : (
                         <div className="h-full w-full flex items-center justify-center bg-gray-100">
@@ -106,7 +108,9 @@ const SpecialistsList = () => {
                       <img
                         src={specialist.image}
                         alt={specialist.name}
-                        className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
+                        className={`w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${
+                          specialist.name === "Д-р Владимир Наунов" ? "object-center" : "object-top"
+                        }`}
                       />
                     ) : (
                       <div className="h-full w-full flex items-center justify-center bg-gray-100">
