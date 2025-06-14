@@ -1,4 +1,3 @@
-
 import Hero from "@/components/home/Hero";
 import ServicesSection from "@/components/home/Services";
 import AboutSection from "@/components/home/About";
@@ -12,8 +11,12 @@ import LaboratorySection from "@/components/home/Laboratory";
 import SEOHead from "@/components/seo/SEOHead";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { useEffect } from "react";
+import { usePageLoading } from "@/hooks/usePageLoading";
+import SectionSkeleton from "@/components/ui/section-skeleton";
 
 const Index = () => {
+  const isLoading = usePageLoading(800);
+  
   const medicalOrganizationSchema = {
     "@context": "https://schema.org",
     "@type": "MedicalOrganization",
@@ -62,6 +65,30 @@ const Index = () => {
       }
     ]
   };
+
+  if (isLoading) {
+    return (
+      <>
+        <SEOHead
+          title="Медицински център Live4Life - Профилактични прегледи и медицински услуги в София"
+          description="Медицински център Live4Life предлага професионални профилактични прегледи, лабораторни изследвания и консултации със специалисти. Запазете час онлайн."
+          keywords="медицински център, профилактични прегледи, лабораторни изследвания, София, здравеопазване, лекари специалисти"
+          canonical="https://live4life-medical.com"
+          ogImage="/lovable-uploads/fa20142c-c218-4352-9a85-856f2a5e3198.png"
+        />
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-grow" role="main">
+            <SectionSkeleton />
+            <SectionSkeleton />
+            <SectionSkeleton />
+            <SectionSkeleton />
+          </main>
+          <Footer />
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
