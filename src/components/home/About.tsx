@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import OptimizedImage from "@/components/ui/optimized-image";
 
 const AboutSection = () => {
   return (
@@ -33,10 +32,11 @@ const AboutSection = () => {
               <div className="absolute -inset-4 border-2 border-primary rounded-lg transform -rotate-3" aria-hidden="true"></div>
               <figure className="relative rounded-lg overflow-hidden w-4/5 mx-auto">
                 <AspectRatio ratio={1 / 1} className="w-full">
-                  <OptimizedImage 
+                  <img 
                     src="/lovable-uploads/9ea23109-c9b6-433d-9838-a2fa74b52ab0.png" 
                     alt="Съвременно медицинско оборудване в Медицински център Live4Life - високотехнологични устройства за точна диагностика и качествено лечение" 
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </AspectRatio>
               </figure>

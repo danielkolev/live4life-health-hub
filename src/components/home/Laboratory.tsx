@@ -3,7 +3,6 @@ import { Check, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
-import OptimizedImage from "@/components/ui/optimized-image";
 
 const LaboratorySection = () => {
   const labServices = [
@@ -49,10 +48,11 @@ const LaboratorySection = () => {
           </article>
           
           <aside className="rounded-lg overflow-hidden flex justify-center">
-            <OptimizedImage 
+            <img 
               src="/lovable-uploads/3382e796-4c40-4a9c-b014-7874fc2a9e29.png" 
               alt="Лабораторни изследвания в МЦ Live4Life - модерна лаборатория с висококачествено оборудване за точни медицински анализи и бързи резултати" 
               className="max-w-sm h-auto rounded-lg shadow-md object-contain"
+              loading="lazy"
             />
           </aside>
         </div>
