@@ -101,15 +101,6 @@
     @apply font-heading font-semibold;
   }
 
-  /* Improved text contrast */
-  p, .text-gray-600 {
-    @apply text-gray-700;
-  }
-
-  .text-gray-100 {
-    @apply text-gray-50;
-  }
-
   .section-padding {
     @apply py-16 lg:py-24 px-4 md:px-8;
   }
@@ -128,80 +119,28 @@ html {
   scroll-padding-top: 80px;
 }
 
-/* Enhanced animations */
+/* Animation utilities */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(50px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
 @keyframes scaleIn {
-  from { transform: scale(0.9); opacity: 0; }
+  from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
 }
 
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-.animate-slide-in-left {
-  animation: slideInLeft 0.8s ease-out forwards;
-}
-
-.animate-slide-in-right {
-  animation: slideInRight 0.8s ease-out forwards;
-}
-
 .animate-scale-in {
-  animation: scaleIn 0.6s ease-out forwards;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Enhanced hover effects */
-.hover-card {
-  @apply transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1;
-}
-
-.hover-button {
-  @apply transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-lg;
-}
-
-.hover-image {
-  @apply transition-all duration-300 ease-in-out hover:scale-110 hover:brightness-110;
-}
-
-.hover-text {
-  @apply transition-colors duration-200 ease-in-out hover:text-primary;
-}
-
-.hover-underline {
-  @apply relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
+  animation: scaleIn 0.5s ease-out forwards;
 }
 
 /* Glassmorphism effects */
 .glass-effect {
-  @apply backdrop-blur-sm bg-white/80 border border-white/20 shadow-lg;
-}
-
-.glass-card {
-  @apply backdrop-blur-lg bg-white/90 border border-white/30 shadow-xl;
+  @apply backdrop-blur-sm bg-white/70 border border-white/20;
 }
 
 /* Custom transitions */
@@ -210,17 +149,12 @@ html {
 }
 
 .soft-shadow {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 
-              0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.enhanced-shadow {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
-              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 
+              0 4px 6px -2px rgba(0, 0, 0, 0.025);
 }
 
 .soft-border {
-  @apply border border-gray-200;
+  @apply border border-gray-100;
 }
 
 /* Specialists image focus */
@@ -234,7 +168,7 @@ html {
 }
 
 .medical-card {
-  @apply bg-white rounded-lg overflow-hidden shadow-md hover-card;
+  @apply bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300;
 }
 
 /* Card gradient backgrounds */
@@ -265,19 +199,19 @@ html {
 }
 
 .blog-content p {
-  @apply mb-4 text-gray-700 leading-relaxed;
+  @apply mb-4 text-gray-600 leading-relaxed;
 }
 
 .blog-content ul {
-  @apply list-disc pl-5 mb-4 text-gray-700 space-y-2;
+  @apply list-disc pl-5 mb-4 text-gray-600 space-y-2;
 }
 
 .blog-content ol {
-  @apply list-decimal pl-5 mb-4 text-gray-700 space-y-2;
+  @apply list-decimal pl-5 mb-4 text-gray-600 space-y-2;
 }
 
 .blog-content blockquote {
-  @apply border-l-4 border-primary pl-4 italic my-6 text-gray-700;
+  @apply border-l-4 border-primary pl-4 italic my-6 text-gray-600;
 }
 
 .blog-content img {
@@ -286,18 +220,18 @@ html {
 
 /* Custom scroll bar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 rounded-full;
+  @apply bg-gray-100;
 }
 
 ::-webkit-scrollbar-thumb {
   @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
 }
 
-/* Enhanced animated underline for links */
+/* Animated underline for links */
 .animated-underline {
   position: relative;
 }
@@ -312,48 +246,10 @@ html {
   left: 0;
   @apply bg-primary;
   transform-origin: bottom right;
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.3s ease-out;
 }
 
 .animated-underline:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
-}
-
-/* Section reveal animations */
-.section-reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.section-reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger animation delays */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
-
-/* Button hover glow effect */
-.button-glow {
-  @apply relative overflow-hidden;
-}
-
-.button-glow::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s;
-}
-
-.button-glow:hover::before {
-  left: 100%;
 }
