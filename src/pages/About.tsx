@@ -45,9 +45,6 @@ const About = () => {
     src: "/lovable-uploads/ee8c308b-4623-4c01-974c-6bbf2368a19d.png",
     alt: "Рецепция на медицински център Live4Life отблизо"
   }, {
-    src: "/lovable-uploads/e3682f61-c892-44cb-9192-eac189a0a711.png",
-    alt: "Рецепция и чакалня на медицински център Live4Life"
-  }, {
     src: "/lovable-uploads/c005b74d-230e-445f-8ef2-7d472b6750ea.png",
     alt: "Лого на стената на медицински център Live4Life"
   }, {
@@ -56,9 +53,6 @@ const About = () => {
   }, {
     src: "/lovable-uploads/056e1d1f-9236-41e0-89d2-9d0af0834f28.png",
     alt: "Лого Live4Life на стената с растение"
-  }, {
-    src: "/lovable-uploads/f5c584c2-938d-4dbe-ab2f-a91af8328f11.png",
-    alt: "Рецепция и чакалня на медицински център Live4Life с лого на стената"
   }];
 
   return <div className="min-h-screen flex flex-col">
