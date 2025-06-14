@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Calendar, Heart } from "lucide-react";
+import OptimizedImage from "@/components/ui/optimized-image";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -51,11 +52,11 @@ const Hero = () => {
               className="bg-white/10 backdrop-blur-sm p-8 rounded-full block"
               aria-label="Посетете нашата страница в SuperDoc"
             >
-              <img 
+              <OptimizedImage 
                 src="/lovable-uploads/fa20142c-c218-4352-9a85-856f2a5e3198.png" 
                 alt="Live4Life Medical Center - Логотип на медицинския център с модерен дизайн и медицинска символика" 
                 className="max-w-[200px] md:max-w-sm"
-                loading="eager"
+                priority={true}
               />
             </a>
           </div>
