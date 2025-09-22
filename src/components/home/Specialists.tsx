@@ -16,26 +16,31 @@ const featuredSpecialists = [{
   image: "https://superdoc.bg/photos/doctors/large/VOwzrqZ05xQyhEBIUQzsubEwQPluMYrQpJLonPoc.jpg"
 }, {
   id: 2,
+  name: "Д-р Людмил Пеев",
+  specialty: "Пластичен хирург",
+  image: "/lovable-uploads/lyudmil-peev.jpg"
+}, {
+  id: 3,
   name: "Д-р Владимир Наунов",
   specialty: "Кардиолог",
   image: "/lovable-uploads/7e2d0a6d-d316-4d11-ab97-c33b19b51671.png"
 }, {
-  id: 3,
+  id: 4,
   name: "Д-р Енвер Атип",
   specialty: "Съдов хирург",
   image: "/lovable-uploads/5f3b6504-bf21-410f-9c00-08169df720a6.png"
 }, {
-  id: 4,
+  id: 5,
   name: "Д-р Байрам Боран",
   specialty: "Дерматолог",
   image: "/lovable-uploads/003cb386-7293-4bfc-9262-813bc69aa07a.png"
 }, {
-  id: 5,
+  id: 6,
   name: "Д-р Ива Великова",
   specialty: "Невролог",
   image: "https://superdoc.bg/photos/doctors/small/HhyOfilfrV5XGTV2feFFcWIyDMfCAPzJ9wk6ssWF.jpg"
 }, {
-  id: 6,
+  id: 7,
   name: "Д-р Юсуф Мусов",
   specialty: "Ендокринолог",
   image: "https://superdoc.bg/photos/doctors/small/Q1fn82wkix8zi1Dtj3cUY1HdS014wA3tAV4ErZuO.jpg"

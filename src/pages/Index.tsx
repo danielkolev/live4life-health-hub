@@ -9,6 +9,7 @@ import Footer from "@/components/layout/Footer";
 import SpecialistsSection from "@/components/home/Specialists";
 import AwardSection from "@/components/home/Award";
 import LaboratorySection from "@/components/home/Laboratory";
+import HealthInsuranceBanner from "@/components/home/HealthInsuranceBanner";
 import SEOHead from "@/components/seo/SEOHead";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { usePageLoading } from "@/hooks/usePageLoading";
@@ -105,6 +106,7 @@ const Index = () => {
         <Navbar />
         <main className="flex-grow" role="main">
           <Hero />
+          <HealthInsuranceBanner />
           <AwardSection />
           <AboutSection />
           <LaboratorySection />
