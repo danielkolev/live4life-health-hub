@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 interface SchemaMarkupProps {
   type: 'MedicalOrganization' | 'LocalBusiness' | 'WebPage';
