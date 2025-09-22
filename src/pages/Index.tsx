@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import Hero from "@/components/home/Hero";
 import ServicesSection from "@/components/home/Services";
 import AboutSection from "@/components/home/About";
@@ -10,7 +11,6 @@ import AwardSection from "@/components/home/Award";
 import LaboratorySection from "@/components/home/Laboratory";
 import SEOHead from "@/components/seo/SEOHead";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import { useEffect } from "react";
 import { usePageLoading } from "@/hooks/usePageLoading";
 import SectionSkeleton from "@/components/ui/section-skeleton";
 

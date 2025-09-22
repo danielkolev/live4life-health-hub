@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export const usePageLoading = (delay: number = 1000) => {
   const [isLoading, setIsLoading] = useState(true);
