@@ -1,12 +1,13 @@
 
+import React, { useEffect, useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { User } from "lucide-react";
-import React, { useEffect, useState, useCallback } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import OptimizedImage from "@/components/ui/optimized-image";
 
 // Featured specialists (show only on homepage)
 const featuredSpecialists = [{
@@ -85,9 +86,11 @@ const SpecialistsSection = () => {
                   <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100 bg-white/90 soft-shadow h-full">
                     <CardContent className="p-0">
                       <AspectRatio ratio={1 / 1} className="bg-gray-100">
-                        {specialist.image ? <img 
+                        {specialist.image ? <OptimizedImage
                           src={specialist.image} 
-                          alt={specialist.name} 
+                          alt={`${specialist.name} - ${specialist.specialty} в медицински център Live4Life`}
+                          width={300}
+                          height={300}
                           className={`w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${
                             specialist.name === "Д-р Владимир Наунов" ? "object-center" : "object-top"
                           }`} 

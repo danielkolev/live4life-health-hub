@@ -1,6 +1,6 @@
 
-const CACHE_NAME = 'live4life-v1';
-const STATIC_ASSETS = [
+const CACHE_NAME = 'live4life-v1.0.0';
+const STATIC_CACHE_URLS = [
   '/',
   '/about',
   '/services',
@@ -8,27 +8,26 @@ const STATIC_ASSETS = [
   '/specialists',
   '/faq',
   '/blog',
-  '/index.css',
+  '/sitemap.xml',
   '/lovable-uploads/fa20142c-c218-4352-9a85-856f2a5e3198.png',
-  '/lovable-uploads/9ea23109-c9b6-433d-9838-a2fa74b52ab0.png',
-  '/lovable-uploads/82ba0413-76dc-42b1-8e31-a79b3f160fc8.png',
-  '/lovable-uploads/3382e796-4c40-4a9c-b014-7874fc2a9e29.png',
-  '/lovable-uploads/2d8e2758-f909-4ca8-84de-9598b438c871.png',
-  '/lovable-uploads/5056946d-3cf9-48fd-8ac2-6735c7f60235.png'
+  '/lovable-uploads/d68364a0-1510-49fc-9c4d-bece335b0e4e.png'
 ];
 
-// Инсталиране на service worker
+// Install event - cache static assets
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('Кеширане на статични ресурси...');
-        return cache.addAll(STATIC_ASSETS);
+        console.log('Кеширане на статични ресурси');
+        return cache.addAll(STATIC_CACHE_URLS);
+      })
+      .then(() => {
+        return self.skipWaiting();
       })
   );
 });
 
-// Активиране на service worker
+// Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -40,40 +39,71 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
+    }).then(() => {
+      return self.clients.claim();
     })
   );
 });
 
-// Обслужване на заявки
+// Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', (event) => {
+  // Skip non-GET requests
+  if (event.request.method !== 'GET') {
+    return;
+  }
+
+  // Skip external requests
+  if (!event.request.url.startsWith(self.location.origin)) {
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request)
-      .then((response) => {
-        // Връщане от кеш, ако съществува
-        if (response) {
-          return response;
-        }
-        
-        // Клониране на заявката
-        const fetchRequest = event.request.clone();
-        
-        return fetch(fetchRequest).then((response) => {
-          // Проверка дали получихме валиден отговор
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
+      .then((cachedResponse) => {
+        // Return cached version if available
+        if (cachedResponse) {
+          // For HTML files, check for updates in background
+          if (event.request.headers.get('accept')?.includes('text/html')) {
+            fetch(event.request)
+              .then((response) => {
+                if (response.ok) {
+                  const responseClone = response.clone();
+                  caches.open(CACHE_NAME)
+                    .then((cache) => {
+                      cache.put(event.request, responseClone);
+                    });
+                }
+              })
+              .catch(() => {}); // Ignore network errors
           }
-          
-          // Клониране на отговора
-          const responseToCache = response.clone();
-          
-          // Кеширане на нови ресурси
-          caches.open(CACHE_NAME)
-            .then((cache) => {
-              cache.put(event.request, responseToCache);
-            });
-          
-          return response;
-        });
+          return cachedResponse;
+        }
+
+        // If not in cache, fetch from network
+        return fetch(event.request)
+          .then((response) => {
+            // Only cache successful responses
+            if (!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
+            }
+
+            // Clone the response
+            const responseToCache = response.clone();
+
+            // Cache the response
+            caches.open(CACHE_NAME)
+              .then((cache) => {
+                cache.put(event.request, responseToCache);
+              });
+
+            return response;
+          })
+          .catch(() => {
+            // If offline and requesting HTML, return offline page
+            if (event.request.headers.get('accept')?.includes('text/html')) {
+              return caches.match('/');
+            }
+          });
       })
   );
 });
