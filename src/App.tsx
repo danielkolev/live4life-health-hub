@@ -2,7 +2,6 @@
 import React, { Suspense, lazy } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ScrollToTop from "./components/utils/ScrollToTop";
 
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -26,7 +25,6 @@ const queryClient = new QueryClient({
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
-      <ScrollToTop />
       <Suspense fallback={<div className="h-screen w-full flex items-center justify-center">Зареждане...</div>}>
         <Routes>
           <Route path="/" element={<Index />} />
