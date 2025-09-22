@@ -16,5 +16,12 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-const rootElement = document.getElementById("root")!;
-createRoot(rootElement).render(<App />);
+// Only create root once to prevent "removeChild" errors
+const rootElement = document.getElementById("root");
+
+if (rootElement) {
+  // Check if the root already has children
+  if (!rootElement.hasChildNodes()) {
+    createRoot(rootElement).render(<App />);
+  }
+}
