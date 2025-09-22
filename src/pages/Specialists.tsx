@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react";
+import React from "react";
 import SpecialistsSection from "@/components/specialists/SpecialistsList";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -7,10 +7,6 @@ import SEOHead from "@/components/seo/SEOHead";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 
 const SpecialistsPage = () => {
-  useEffect(() => {
-    document.title = "Live4Life Medical Center | Нашите специалисти";
-  }, []);
-
   const specialistsPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
