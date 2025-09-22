@@ -113,16 +113,14 @@ const SpecialistsSection = () => {
                     <CardContent className="p-0 h-full flex flex-col">
                       {/* Изображение */}
                       <div className="relative overflow-hidden">
-                        <AspectRatio ratio={4 / 3} className="bg-gray-100">
+                        <AspectRatio ratio={3 / 4} className="bg-gray-100">
                           {specialist.image ? (
                             <OptimizedImage
                               src={specialist.image} 
                               alt={`${specialist.name} - ${specialist.specialty} в медицински център Live4Life`}
                               width={300}
-                              height={225}
-                              className={`w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${
-                                specialist.name === "Д-р Владимир Наунов" ? "object-center" : "object-top"
-                              }`} 
+                              height={400}
+                              className={`w-full h-full object-cover transition-transform duration-300 hover:scale-105 object-top`} 
                             />
                           ) : (
                             <div className="h-full w-full flex items-center justify-center bg-gray-100">
