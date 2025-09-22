@@ -39,11 +39,6 @@ const featuredSpecialists = [{
   name: "Д-р Юсуф Мусов",
   specialty: "Ендокринолог",
   image: "https://superdoc.bg/photos/doctors/small/Q1fn82wkix8zi1Dtj3cUY1HdS014wA3tAV4ErZuO.jpg"
-}, {
-  id: 7,
-  name: "Д-р Людмил Пеев",
-  specialty: "Пластичен хирург",
-  image: "/lovable-uploads/lyudmil-peev.jpg"
 }];
 
 const SpecialistsSection = () => {

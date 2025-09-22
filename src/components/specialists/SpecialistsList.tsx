@@ -70,12 +70,6 @@ const specialists: Specialist[] = [{
   specialty: "Акушер-гинеколог",
   image: "https://superdoc.bg/photos/doctors/small/kiWBQLJ4GEMpP72pwJorYf55voBVEiw7k9OHGrz0.jpg",
   superdocLink: "https://superdoc.bg/lekar/anastasia-avramova"
-}, {
-  id: 10,
-  name: "Д-р Людмил Пеев",
-  specialty: "Пластичен хирург",
-  image: "/lovable-uploads/lyudmil-peev.jpg",
-  superdocLink: "https://superdoc.bg/lekar/d-r-lyudmil-peev-6243"
 }];
 
 const SpecialistsList = () => {
