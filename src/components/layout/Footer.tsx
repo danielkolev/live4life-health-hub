@@ -1,4 +1,4 @@
-
+import React from "react";
 import { Link } from "react-router-dom";
 import { Heart, Mail, Phone } from "lucide-react";
 
@@ -40,24 +40,16 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-primary">Бързи връзки</h3>
             <ul className="space-y-2 text-gray-600">
               <li>
-                <Link to="/" className="hover:text-primary transition-colors">
-                  Начало
-                </Link>
+                <Link to="/" className="hover:text-primary transition-colors">Начало</Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-primary transition-colors">
-                  За нас
-                </Link>
+                <Link to="/about" className="hover:text-primary transition-colors">За нас</Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-primary transition-colors">
-                  Услуги
-                </Link>
+                <Link to="/services" className="hover:text-primary transition-colors">Услуги</Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-primary transition-colors">
-                  Контакти
-                </Link>
+                <Link to="/contact" className="hover:text-primary transition-colors">Контакти</Link>
               </li>
             </ul>
           </div>

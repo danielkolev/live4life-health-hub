@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Hero from "@/components/home/Hero";
 import ServicesSection from "@/components/home/Services";
 import AboutSection from "@/components/home/About";
@@ -10,15 +10,12 @@ import SpecialistsSection from "@/components/home/Specialists";
 import AwardSection from "@/components/home/Award";
 import LaboratorySection from "@/components/home/Laboratory";
 import HealthInsuranceBanner from "@/components/home/HealthInsuranceBanner";
+import TestimonialsSection from "@/components/home/Testimonials";
 import EnhancedSEOHead from "@/components/seo/EnhancedSEOHead";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { generateMedicalOrganizationSchema, generateWebPageSchema } from "@/utils/seoUtils";
-import { usePageLoading } from "@/hooks/usePageLoading";
-import SectionSkeleton from "@/components/ui/section-skeleton";
 
 const Index = () => {
-  const isLoading = usePageLoading(800);
-  
   const medicalOrganizationSchema = generateMedicalOrganizationSchema(
     "Медицински център Live4Life",
     "Професионални профилактични прегледи и медицински услуги за индивидуални и корпоративни клиенти",
@@ -61,32 +58,6 @@ const Index = () => {
     "https://live4life-medical.com"
   );
 
-  if (isLoading) {
-    return (
-      <>
-        <EnhancedSEOHead
-          title="Медицински център Live4Life - Профилактични прегледи и медицински услуги в София"
-          description="Медицински център Live4Life предлага професионални профилактични прегледи, лабораторни изследвания и консултации със специалисти. Работим със здравна каса. Запазете час онлайн."
-          keywords="медицински център софия, профилактични прегледи, лабораторни изследвания, здравна каса, нзок, лекари специалисти, корпоративно здравеопазване, превантивна медицина"
-          canonical="https://live4life-medical.com"
-          ogImage="/lovable-uploads/fa20142c-c218-4352-9a85-856f2a5e3198.png"
-          ogType="website"
-          siteName="Медицински център Live4Life"
-        />
-        <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <main className="flex-grow" role="main">
-            <SectionSkeleton />
-            <SectionSkeleton />
-            <SectionSkeleton />
-            <SectionSkeleton />
-          </main>
-          <Footer />
-        </div>
-      </>
-    );
-  }
-
   return (
     <>
       <EnhancedSEOHead
@@ -105,12 +76,12 @@ const Index = () => {
         <Navbar />
         <main className="flex-grow" role="main">
           <Hero />
-          <HealthInsuranceBanner />
           <AwardSection />
           <AboutSection />
           <LaboratorySection />
           <ServicesSection />
           <SpecialistsSection />
+          <TestimonialsSection />
           <ContactCTA />
           <LocationMap />
         </main>
