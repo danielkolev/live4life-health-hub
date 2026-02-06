@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'live4life-v1.0.1';
+const CACHE_NAME = 'live4life-v2.0.0';
 const STATIC_CACHE_URLS = [
   '/',
   '/about',
