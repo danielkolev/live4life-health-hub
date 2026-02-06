@@ -16,7 +16,7 @@ Disallow: /src/
 Disallow: /*.json$
 
 # Sitemap location
-Sitemap: https://live4life-medical.com/sitemap.xml
+Sitemap: https://live4life.bg/sitemap.xml
 
 # Crawl-delay for better server performance
 Crawl-delay: 1
