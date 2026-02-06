@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'live4life-v1.0.0';
+const CACHE_NAME = 'live4life-v1.0.1';
 const STATIC_CACHE_URLS = [
   '/',
   '/about',
@@ -54,6 +54,20 @@ self.addEventListener('fetch', (event) => {
 
   // Skip external requests
   if (!event.request.url.startsWith(self.location.origin)) {
+    return;
+  }
+
+  // NEVER cache Vite dependency chunks or JS modules - prevents duplicate React instances
+  const url = new URL(event.request.url);
+  if (
+    url.pathname.includes('node_modules') ||
+    url.pathname.includes('.vite') ||
+    url.pathname.startsWith('/src/') ||
+    (url.pathname.endsWith('.js') && !url.pathname.startsWith('/sw.js')) ||
+    url.pathname.endsWith('.mjs') ||
+    url.pathname.endsWith('.ts') ||
+    url.pathname.endsWith('.tsx')
+  ) {
     return;
   }
 
