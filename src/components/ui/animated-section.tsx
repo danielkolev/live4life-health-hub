@@ -17,23 +17,15 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
 }) => {
   const { elementRef, isVisible } = useScrollAnimation();
 
-  const animationClasses = {
-    'fade-up': 'animate-fade-up',
-    'fade-in': 'animate-fade-in',
-    'slide-left': 'animate-slide-left',
-    'slide-right': 'animate-slide-right',
-    'scale-in': 'animate-scale-in'
-  };
-
   return (
     <div
       ref={elementRef}
       className={cn(
         'transition-all duration-700 ease-out',
-        isVisible ? animationClasses[animation] : 'opacity-0 translate-y-8',
+        isVisible ? 'opacity-100 translate-y-0 translate-x-0 scale-100' : 'opacity-0 translate-y-4',
         className
       )}
-      style={{ animationDelay: `${delay}ms` }}
+      style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>
