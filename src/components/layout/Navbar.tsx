@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Calendar, Menu, X } from "lucide-react";
@@ -7,22 +7,21 @@ import { Calendar, Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
 
   const navItems = [
     { name: "Начало", path: "/" },
@@ -56,11 +55,9 @@ const Navbar = () => {
             <Link
               key={item.path}
               to={item.path}
-              className={`font-medium transition-colors duration-300 ${
-                isScrolled 
-                  ? "text-secondary-dark hover:text-primary" 
-                  : "text-secondary-dark hover:text-primary"
-              } ${location.pathname === item.path ? "text-primary font-semibold" : ""}`}
+              className={`font-medium transition-colors duration-300 text-secondary-dark hover:text-primary ${
+                location.pathname === item.path ? "text-primary font-semibold" : ""
+              }`}
             >
               {item.name}
             </Link>
@@ -68,9 +65,10 @@ const Navbar = () => {
           <Button 
             variant="default" 
             className="bg-primary text-white hover:bg-primary-dark transition-all duration-300 shadow-sm ml-4"
+            asChild
           >
-            <Calendar className="mr-2 h-4 w-4" />
             <a href="https://superdoc.bg/klinika/mts-live-4-life" target="_blank" rel="noopener noreferrer">
+              <Calendar className="mr-2 h-4 w-4" />
               Запазете час
             </a>
           </Button>
@@ -82,42 +80,53 @@ const Navbar = () => {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          {mobileMenuOpen ? (
-            <X size={24} />
-          ) : (
-            <Menu size={24} />
-          )}
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4">
-            <div className="container-custom flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`hover:text-primary font-medium transition-colors py-2 ${
-                    location.pathname === item.path ? "text-primary font-semibold" : "text-secondary-dark"
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Button 
-                variant="default" 
-                className="bg-primary text-white hover:bg-primary-dark w-full justify-center transition-all duration-300"
+        {/* Mobile Menu with animation */}
+        <div
+          ref={menuRef}
+          className={`lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
+            mobileMenuOpen 
+              ? "max-h-[500px] opacity-100 border-t border-gray-100" 
+              : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="container-custom flex flex-col space-y-4 py-4">
+            {navItems.map((item, index) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`hover:text-primary font-medium transition-all duration-300 py-2 ${
+                  location.pathname === item.path ? "text-primary font-semibold" : "text-secondary-dark"
+                }`}
+                style={{ 
+                  transitionDelay: mobileMenuOpen ? `${index * 50}ms` : '0ms',
+                  transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(-10px)',
+                  opacity: mobileMenuOpen ? 1 : 0,
+                }}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <Button 
+              variant="default" 
+              className="bg-primary text-white hover:bg-primary-dark w-full justify-center transition-all duration-300"
+              asChild
+            >
+              <a 
+                href="https://superdoc.bg/klinika/mts-live-4-life" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Calendar className="mr-2 h-4 w-4" />
-                <a href="https://superdoc.bg/klinika/mts-live-4-life" target="_blank" rel="noopener noreferrer">
-                  Запазете час
-                </a>
-              </Button>
-            </div>
+                Запазете час
+              </a>
+            </Button>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );

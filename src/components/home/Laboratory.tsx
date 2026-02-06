@@ -1,4 +1,5 @@
 
+import React from "react";
 import { Check, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -38,9 +39,9 @@ const LaboratorySection = () => {
             </ul>
             <Separator className="my-6" />
             <div className="flex justify-center">
-              <Button className="bg-primary hover:bg-primary-dark text-white">
-                <Calendar className="mr-2 h-4 w-4" aria-hidden="true" />
-                <Link to="/contact" className="text-white">
+              <Button className="bg-primary hover:bg-primary-dark text-white" asChild>
+                <Link to="/contact">
+                  <Calendar className="mr-2 h-4 w-4" aria-hidden="true" />
                   Запишете час за изследване
                 </Link>
               </Button>
@@ -50,7 +51,7 @@ const LaboratorySection = () => {
           <aside className="rounded-lg overflow-hidden flex justify-center">
             <img 
               src="/lovable-uploads/3382e796-4c40-4a9c-b014-7874fc2a9e29.png" 
-              alt="Лабораторни изследвания в МЦ Live4Life - модерна лаборатория с висококачествено оборудване за точни медицински анализи и бързи резултати" 
+              alt="Лабораторни изследвания в МЦ Live4Life - модерна лаборатория" 
               className="max-w-sm h-auto rounded-lg shadow-md object-contain"
               loading="lazy"
             />

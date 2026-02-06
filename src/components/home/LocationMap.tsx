@@ -1,3 +1,4 @@
+import React from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card, CardContent } from "@/components/ui/card";
 const LocationMap = () => {
