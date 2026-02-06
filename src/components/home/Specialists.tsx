@@ -8,7 +8,7 @@ import { User } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import OptimizedImage from "@/components/ui/optimized-image";
-import AnimatedSection from "@/components/ui/animated-section";
+
 
 // Featured specialists with SuperDoc links
 const featuredSpecialists = [{
@@ -81,21 +81,18 @@ const SpecialistsSection = () => {
   }, [api, scrollNext]);
   
   return (
-    <AnimatedSection animation="fade-up">
-      <section id="specialists" className="section-padding bg-gradient-to-b from-white to-gray-50 py-[30px]">
+    <section id="specialists" className="section-padding bg-gradient-to-b from-white to-gray-50 py-[30px]">
         <div className="container-custom">
-          <AnimatedSection animation="fade-up" delay={200}>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-secondary-dark">Нашите специалисти</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto mb-4">
-                В Медицински център Live4Life работят висококвалифицирани специалисти с богат опит в своята област. 
-                Разчитайте на професионално отношение и внимание към всеки пациент.
-              </p>
-              <p className="text-sm text-primary font-medium">
-                ✨ Кликнете на специалист за запазване на час в SuperDoc
-              </p>
-            </div>
-          </AnimatedSection>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-secondary-dark">Нашите специалисти</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-4">
+              В Медицински център Live4Life работят висококвалифицирани специалисти с богат опит в своята област. 
+              Разчитайте на професионално отношение и внимание към всеки пациент.
+            </p>
+            <p className="text-sm text-primary font-medium">
+              ✨ Кликнете на специалист за запазване на час в SuperDoc
+            </p>
+          </div>
 
         <div className="mb-10">
           <Carousel opts={{
@@ -197,7 +194,6 @@ const SpecialistsSection = () => {
         </div>
         </div>
       </section>
-    </AnimatedSection>
   );
 };
 
